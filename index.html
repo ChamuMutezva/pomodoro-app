@@ -13,14 +13,21 @@
 
 <body>
 
-
-  <svg class="progress-ring" width="120" height="120">
-    <circle class="progress-ring__circle" stroke="white" stroke-width="4" fill="transparent" r="52" cx="60" cy="60" />
-  </svg>
-
-  <input value="35" type="number" step="1" min="0" max="60" placeholder="progress">
-
-
+  <div class="wrapper">
+    <svg class="progress-ring" width="272" height="272">
+      <circle class="progress-ring__circle" stroke="white" stroke-width="8" fill="transparent" r="120" cx="136" cy="136" />
+      
+    </svg>
+    <!---
+    <input value="35" type="number" step="1" min="0" max="60" placeholder="progress">
+    -->
+    <div class="ctrls">      
+      <time datetime=""></time>
+      <button>Start</button>
+    </div>
+   
+  </div>
+<!--
   pomodoro
   short break
   long break
@@ -40,6 +47,7 @@
   Color
 
   Apply
+-->
   <script src="main.js"></script>
 </body>
 

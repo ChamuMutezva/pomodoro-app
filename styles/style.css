@@ -1,31 +1,42 @@
-html, body {
-  background-color: #2962FF;
-  display: -webkit-box;
-  display: -ms-flexbox;
+html,
+body {
+  background-color: #1E213F;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   height: 100%;
-  position: relative;
-}
+  position: relative; }
+
+.progress-ring {
+  box-shadow: 0px 1px 5px 17px #292d53;
+  background-color: #161932;
+  border-radius: 50%; }
 
 .progress-ring__circle {
-  -webkit-transition: 0.35s stroke-dashoffset;
+  stroke: #F87070;
   transition: 0.35s stroke-dashoffset;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  -webkit-transform-origin: 50% 50%;
-          transform-origin: 50% 50%;
-}
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%; }
 
 input {
   position: fixed;
   top: 10px;
   left: 10px;
-  width: 80px;
-}
+  width: 80px; }
+
+.wrapper {
+  position: relative; }
+
+.ctrls {
+  position: absolute;
+  top: 30%;
+  left: 33%;
+  display: flex;
+  place-content: center;
+  flex-direction: column; }
+
+time {
+  font-size: 3rem;
+  color: #FFFFFF; }
+
 /*# sourceMappingURL=style.css.map */
