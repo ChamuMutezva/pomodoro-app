@@ -1,6 +1,7 @@
 const circle = document.querySelector('circle');
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
+const TIME_LIMIT = 300
 
 const displayTime = document.querySelector("time")
 console.log(circumference)
@@ -9,7 +10,7 @@ circle.style.strokeDasharray = `${circumference} ${circumference}`;
 circle.style.strokeDashoffset = `${circumference}`;
 
 function setProgress(percent) {
-  const offset = circumference - percent / 60 * circumference;
+  const offset = circumference - percent / TIME_LIMIT * circumference;
   circle.style.strokeDashoffset = offset;
   console.log(offset)
 }
@@ -46,4 +47,4 @@ function timer(seconds) {
   }, 1000)
 }
 
-timer(10)
+timer(TIME_LIMIT)
