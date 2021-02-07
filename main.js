@@ -1,7 +1,7 @@
 const circle = document.querySelector('circle');
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
-const TIME_LIMIT = 300
+const TIME_LIMIT = 1500
 
 const displayTime = document.querySelector("time")
 console.log(circumference)
@@ -25,7 +25,7 @@ function setProgress(percent) {
 //})
 
 function timer(seconds) {
- const temp = seconds
+const temp = seconds
 
  const progressChecker =  setInterval(function () {
     
@@ -34,15 +34,17 @@ function timer(seconds) {
     const secs = seconds % 60
     const displaySec = secs < 10 ? `0${secs}` : secs
     seconds--
+    displayTime.innerText = `${displayMin}:${displaySec}`
     //console.log(seconds)
    // console.log(temp)
     //const cir = circumference - ((circumference * seconds) / temp)
     //console.log(cir)
     
     if(seconds === 0) {
+      displayTime.innerHTML="00:00"
       clearInterval(progressChecker)
     }
-    displayTime.innerText = `${displayMin}:${displaySec}`
+   
     setProgress((temp - seconds))
   }, 1000)
 }

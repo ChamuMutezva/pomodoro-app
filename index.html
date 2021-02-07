@@ -12,23 +12,34 @@
 </head>
 
 <body>
-
   <div class="wrapper">
-    <svg class="progress-ring" width="272" height="272">
-      <circle class="progress-ring__circle" stroke="white" stroke-width="8"
-       fill="transparent" r="120" cx="136" cy="136" />      
-    </svg>
-    <!---
+    <div class="pomodoro__container">
+      <h1>pomodoro</h1>
+      <div class="break__mode">
+        <button class="btn__pomodoro">pomodoro</button>
+        <span>short break</span>
+        <span>long break</span>
+      </div>
+      <svg class="progress-ring" width="272" height="272">
+        <circle class="progress-ring__circle" stroke="white" stroke-width="8" fill="transparent" r="120" cx="136"
+          cy="136" />
+      </svg>
+      <!---
     <input value="35" type="number" step="1" min="0" max="60" placeholder="progress">
     -->
-    <div class="ctrls">      
-      <time datetime=""></time>
-      <button>Start</button>
+      <div class="ctrls">
+        <time datetime=""></time>
+        <button class="start__pause">Start</button>
+      </div>
     </div>
-   
+    <div class="menu__options">
+      <button class="menu__options--btn">
+        <img src="./assets/icon-settings.svg" alt="menu settings">
+      </button>
+    </div>
   </div>
-<!--
-  pomodoro
+  <!--
+  
   short break
   long break
 

@@ -1,42 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=Roboto+Slab:wght@300;400;500;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+}
+
 html,
 body {
   background-color: #1E213F;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
-  position: relative; }
+  position: relative;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-top: 32px;
+  font-size: 1.5rem;
+}
 
 .progress-ring {
-  box-shadow: 0px 1px 5px 17px #292d53;
+  -webkit-box-shadow: 0px 1px 5px 17px #292d53;
+          box-shadow: 0px 1px 5px 17px #292d53;
   background-color: #161932;
-  border-radius: 50%; }
+  border-radius: 50%;
+}
 
 .progress-ring__circle {
   stroke: #F87070;
+  -webkit-transition: 0.35s stroke-dashoffset;
   transition: 0.35s stroke-dashoffset;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%; }
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
 
 input {
   position: fixed;
   top: 10px;
   left: 10px;
-  width: 80px; }
+  width: 80px;
+}
 
 .wrapper {
-  position: relative; }
+  position: relative;
+}
+
+.pomodoro__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 30px;
+}
 
 .ctrls {
-  position: absolute;
-  top: 30%;
-  left: 33%;
+  position: relative;
+  bottom: 200px;
+  left: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   place-content: center;
-  flex-direction: column; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.start__pause {
+  width: 110px;
+}
 
 time {
   font-size: 3rem;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+}
 
+.btn__pomodoro {
+  width: 106px;
+  padding: 16px;
+  background-color: #F87070;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+}
+
+span {
+  color: #EFF1FA;
+}
+
+.break__mode {
+  width: 87.2%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu__options--btn {
+  background: no-repeat;
+  border: none;
+  margin: auto;
+  display: block;
+}
 /*# sourceMappingURL=style.css.map */
