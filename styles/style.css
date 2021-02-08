@@ -100,6 +100,7 @@ span {
 
 .break__mode {
   width: 87.2%;
+  max-width: 350px;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -117,5 +118,33 @@ span {
   border: none;
   margin: auto;
   display: block;
+}
+
+.modal__settings {
+  width: 87.2%;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  background-color: #FFFFFF;
+  height: 80vh;
+  visibility: hidden;
+}
+
+.modal__settings__hide {
+  visibility: visible;
+}
+
+.settings__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  margin: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=style.css.map */

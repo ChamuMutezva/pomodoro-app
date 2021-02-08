@@ -88,6 +88,7 @@ span {
 }
 .break__mode {
 	width: 87.2%;
+  max-width: 350px;
 	margin: auto;
 	display: flex;
 	justify-content: space-between;
@@ -98,4 +99,23 @@ span {
 	border: none;
 	margin: auto;
 	display: block;
+}
+.modal__settings {
+	width: 87.2%;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	background-color: #FFFFFF;
+	height: 80vh;
+	visibility: hidden;
+}
+.modal__settings__hide {
+  visibility: visible;
+}
+.settings__nav {
+	display: flex;
+	width: 80%;
+	margin: auto;
+	justify-content: space-between;
+  align-items: center;
 }
