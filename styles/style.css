@@ -147,4 +147,8 @@ span {
       -ms-flex-align: center;
           align-items: center;
 }
+
+input.timesetter {
+  position: relative;
+}
 /*# sourceMappingURL=style.css.map */
