@@ -6,6 +6,7 @@ const TIME_LIMIT = 1500
 const displayTime = document.querySelector("time")
 
 const change__settings = document.querySelector(".menu__options--btn")
+const close__menu = document.querySelector(".close__menu")
 const modal = document.querySelector(".modal__settings")
 console.log(change__settings)
 console.log(circumference)
@@ -57,5 +58,8 @@ timer(TIME_LIMIT)
 
 /* modal setting */
 change__settings.addEventListener("click", () => {
+  modal.classList.toggle("modal__settings__hide")
+})
+close__menu.addEventListener("click", () => {
   modal.classList.toggle("modal__settings__hide")
 })

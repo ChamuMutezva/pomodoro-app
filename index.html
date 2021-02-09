@@ -41,15 +41,20 @@
   <div class="modal__settings">
     <div class="settings__nav">
       <h2> Settings</h2>
-      <img src="./assets/icon-close.svg" alt="">
-    </div>    
+      <img src="./assets/icon-close.svg" alt="" class="close__menu">
+    </div>
     <hr>
     <div class="time__settings">
       <h3>time(minutes)</h3>
-      <input type="range" name="timesetter" id="timesetter" class="timesetter" value="25" min="1" max="30" step="1">
+      <div class="time__incremental">
+        <label for="timesetter">pomodoro
+          <input type="number" name="timesetter" id="timesetter" class="time__control" value="15" min="1" max="30"
+            step="1">
+        </label>
+      </div>
+
     </div>
-  </div>
-  <!--
+    <!--
   
   short break
   long break
@@ -70,7 +75,7 @@
 
   Apply
 -->
-  <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 
 </html>

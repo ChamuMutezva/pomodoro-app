@@ -39,13 +39,6 @@ h1 {
   transform-origin: 50% 50%;
 }
 
-input {
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  width: 80px;
-}
-
 .wrapper {
   position: relative;
 }
@@ -119,6 +112,6 @@ span {
 	justify-content: space-between;
   align-items: center;
 }
-input.timesetter {
+input.timesetter, input.time__control {
 	position: relative;
 }
