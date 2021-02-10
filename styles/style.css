@@ -116,11 +116,12 @@ span {
 .modal__settings {
   width: 87.2%;
   position: absolute;
-  top: 5%;
+  top: 46px;
   left: 5%;
   background-color: #FFFFFF;
   height: 80vh;
   visibility: hidden;
+  border-radius: 15px;
 }
 
 .modal__settings__hide {
@@ -131,7 +132,7 @@ span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 80%;
+  width: 85%;
   margin: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -139,9 +140,87 @@ span {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
-input.timesetter, input.time__control {
+input.timesetter,
+input.time__control {
   position: relative;
+}
+
+.time__settings {
+  padding-top: 24px;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 120px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.time__incremental {
+  position: relative;
+  width: 85%;
+  margin: 14px auto;
+}
+
+.controls {
+  position: absolute;
+  right: 15px;
+  top: -1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  /* align-items: start; */
+}
+
+label {
+  width: 100%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.time__control {
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #d3e2f0;
+  border: none;
+}
+
+h3 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4.23px;
+  line-height: 100%;
+  font-size: 0.69rem;
+}
+
+.controls__timer {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
 }
 /*# sourceMappingURL=style.css.map */

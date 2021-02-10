@@ -8,6 +8,9 @@ const displayTime = document.querySelector("time")
 const change__settings = document.querySelector(".menu__options--btn")
 const close__menu = document.querySelector(".close__menu")
 const modal = document.querySelector(".modal__settings")
+const count__up = document.querySelector(".btn__up")
+const count__down = document.querySelector(".btn__down")
+
 console.log(change__settings)
 console.log(circumference)
 
@@ -62,4 +65,8 @@ change__settings.addEventListener("click", () => {
 })
 close__menu.addEventListener("click", () => {
   modal.classList.toggle("modal__settings__hide")
+})
+
+count__up.addEventListener("click", ()=> {
+
 })

@@ -76,42 +76,116 @@ time {
   border: none;
   border-radius: 30px;
 }
+
 span {
-	color: $tx-off-white;
+  color: $tx-off-white;
 }
+
 .break__mode {
-	width: 87.2%;
+  width: 87.2%;
   max-width: 350px;
-	margin: auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .menu__options--btn {
-	background: no-repeat;
-	border: none;
-	margin: auto;
-	display: block;
+  background: no-repeat;
+  border: none;
+  margin: auto;
+  display: block;
 }
+
 .modal__settings {
-	width: 87.2%;
-	position: absolute;
-	top: 5%;
-	left: 5%;
-	background-color: #FFFFFF;
-	height: 80vh;
-	visibility: hidden;
+  width: 87.2%;
+  position: absolute;
+  top: 46px;
+  left: 5%;
+  background-color: #FFFFFF;
+  height: 80vh;
+  visibility: hidden;
+  border-radius: 15px;  
 }
+
 .modal__settings__hide {
   visibility: visible;
 }
+
 .settings__nav {
-	display: flex;
-	width: 80%;
-	margin: auto;
-	justify-content: space-between;
+  display: flex;
+  width: 85%;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+input.timesetter,
+input.time__control {
+  position: relative;
+}
+.time__settings {
+	padding-top: 24px;
+}
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 120px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.time__incremental {
+	position: relative;
+	width: 85%;
+	margin: 14px auto;
+	
+}
+.controls {
+  position: absolute;
+  right: 15px;
+  top: -1px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* align-items: start; */
+}
+
+label {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+  margin: auto;
   align-items: center;
 }
-input.timesetter, input.time__control {
-	position: relative;
+
+.time__control {
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #d3e2f0;
+  border: none;
+}
+
+h3 {
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 4.23px;
+	line-height: 100%;
+  font-size: 0.69rem;
+}
+
+.controls__timer {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
 }
