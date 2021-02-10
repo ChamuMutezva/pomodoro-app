@@ -8,8 +8,20 @@ const displayTime = document.querySelector("time")
 const change__settings = document.querySelector(".menu__options--btn")
 const close__menu = document.querySelector(".close__menu")
 const modal = document.querySelector(".modal__settings")
-const count__up = document.querySelector(".btn__up")
-const count__down = document.querySelector(".btn__down")
+//pomodoro time controllers
+const count__up = document.querySelector(".btn--up")
+const count__down = document.querySelector(".btn--down")
+const input__control__time = document.querySelector(".time__control")
+
+//short break contollers
+const count__up__short = document.querySelector(".btn--up")
+const count__down__short = document.querySelector(".btn--down")
+const time__control__short = document.querySelector(".time__control__short")
+
+
+
+let count = Number(input__control__time.value)
+console.log(count)
 
 console.log(change__settings)
 console.log(circumference)
@@ -68,5 +80,16 @@ close__menu.addEventListener("click", () => {
 })
 
 count__up.addEventListener("click", ()=> {
-
+  if (count < 30) {
+    count += 1
+  } 
+  input__control__time.value = count.toString()
+  console.log(count)
+})
+count__down.addEventListener("click", ()=> {
+  if (count > 1) {
+    count -= 1
+  } 
+  input__control__time.value = count.toString()
+  console.log(count)
 })

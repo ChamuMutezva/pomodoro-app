@@ -67,6 +67,9 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .start__pause {
@@ -202,7 +205,7 @@ label {
           align-items: center;
 }
 
-.time__control {
+.time__control, .time__control__short {
   padding: 10px;
   border-radius: 15px;
   background-color: #d3e2f0;
