@@ -81,17 +81,23 @@ time {
   color: #FFFFFF;
 }
 
-.btn__pomodoro {
+.break__mode--btn {
   width: 106px;
   padding: 16px;
-  background-color: #F87070;
+  background-color: inherit;
   outline: none;
   border: none;
   border-radius: 30px;
+  color: #EFF1FA;
 }
 
-span {
-  color: #EFF1FA;
+.break__mode--btn:hover {
+  cursor: pointer;
+}
+
+.break__mode__active {
+  background-color: #F87070;
+  color: #161932;
 }
 
 .break__mode {

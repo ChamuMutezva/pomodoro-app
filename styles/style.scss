@@ -69,19 +69,22 @@ time {
   color: $tx-white;
 }
 
-.btn__pomodoro {
-  width: 106px;
-  padding: 16px;
-  background-color: $tx-bg-color;
-  outline: none;
-  border: none;
-  border-radius: 30px;
+.break__mode--btn {
+	width: 106px;
+	padding: 16px;
+	background-color: inherit;
+	outline: none;
+	border: none;
+	border-radius: 30px;
+	color: $tx-off-white;
 }
-
-span {
-  color: $tx-off-white;
+.break__mode--btn:hover{
+  cursor: pointer;
 }
-
+.break__mode__active {  
+  background-color: $tx-bg-color; 
+  color: $bg-color-main; 
+}
 .break__mode {
   width: 87.2%;
   max-width: 350px;
