@@ -24,8 +24,9 @@ const time__control__short = document.querySelector(".time__control__short")
 
 
 
-let count = Number(input__control__time.value)
-console.log(count)
+let pomodoro__count = Number(input__control__time.value)
+let short__count = Number(time__control__short.value)
+console.log(pomodoro__count)
 
 console.log(change__settings)
 console.log(circumference)
@@ -106,12 +107,45 @@ timer__controller.addEventListener("click", (evt) => {
   const parent__input = parent__div.previousElementSibling
   // get input element
   const target__input = parent__input.firstElementChild
-  if (target.classList.contains("btn--up")) {
-    console.log("increase timer")
-    console.log(timer__controller.firstElementChild)
-  } else if(target.classList.contains("btn--down")) {
-    console.log("decrease the count down timer")
-    console.log(timer__controller.firstElementChild)
+  if (target__input == null) {
+    return
   }
- console.log(target__input)
+  if (target__input.classList.contains("time__control")) {
+    console.log("pomodoro timer control")
+    if (target.classList.contains("btn--up")) {
+      console.log("increase the pomodoro timer")
+      if (pomodoro__count < 90) {
+        pomodoro__count++
+        target__input.value = pomodoro__count
+      }
+    }
+    else if (target.classList.contains("btn--down")) {
+      console.log("decrease the pomodoro timer")
+      if (pomodoro__count > 5) {
+        pomodoro__count--
+        target__input.value = pomodoro__count
+      }
+    }
+  } else if (target__input.classList.contains("time__control__short")) {
+    console.log("short timer break controll")
+    if (target.classList.contains("btn--up")) {
+      console.log("increase the short break timer")
+      if (short__count < 10) {
+        short__count++
+        target__input.value = short__count
+      }
+    }
+    else if (target.classList.contains("btn--down")) {
+      console.log("decrease the pomodoro timer")
+      if (pomodoro__count > 5) {
+        pomodoro__count--
+        target__input.value = pomodoro__count
+      }
+    }
+  }
+  console.log(target__input)
 })
+
+const countUp = (min, max) => {
+
+}
