@@ -95,7 +95,12 @@ time {
   cursor: pointer;
 }
 
-.break__mode__active {
+.break__line {
+  width: 87.2%;
+  margin: auto;
+}
+
+.break__mode--btn:focus {
   background-color: #F87070;
   color: #161932;
 }

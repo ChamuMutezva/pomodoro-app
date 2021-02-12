@@ -9,17 +9,15 @@ const displayTime = document.querySelector("time")
 const change__settings = document.querySelector(".menu__options--btn")
 const close__menu = document.querySelector(".close__menu")
 const modal = document.querySelector(".modal__settings")
+const pomodoroBtn = document.querySelector(".pomodoro--btn") // to set focus on this button on load
 // timer controller setter
 const timer__controller = document.querySelector(".time__settings")
 console.log(timer__controller)
+
 //pomodoro time controllers
 const count__up = document.querySelector(".btn--up")
 const count__down = document.querySelector(".btn--down")
 const input__control__time = document.querySelector(".time__control")
-
-//short break contollers
-const count__up__short = document.querySelector(".btn--up")
-const count__down__short = document.querySelector(".btn--down")
 const time__control__short = document.querySelector(".time__control__short")
 const time__control__long = document.querySelector(".time__control__long")
 
@@ -29,6 +27,7 @@ let short__count = Number(time__control__short.value)
 let long__count = Number(time__control__long.value)
 console.log(pomodoro__count)
 
+pomodoroBtn.focus()
 console.log(change__settings)
 console.log(circumference)
 
@@ -85,21 +84,6 @@ close__menu.addEventListener("click", () => {
   modal.classList.toggle("modal__settings__hide")
 })
 
-/*
-count__up.addEventListener("click", ()=> {
-  if (count < 30) {
-    count += 1
-  } 
-  input__control__time.value = count.toString()
-  console.log(count)
-})
-count__down.addEventListener("click", ()=> {
-  if (count > 1) {
-    count -= 1
-  } 
-  input__control__time.value = count.toString()
-  console.log(count)
-})*/
 timer__controller.addEventListener("click", (evt) => {
   const target = evt.target
   //get parent div of target
@@ -163,9 +147,7 @@ const countUp = (maxvalue, counter, targetInput, checkmin) => {
     console.log(counter)
     console.log(maxvalue)
     console.log(targetInput.value)   
-  }
-
-  
+  }  
 }
 
 const countDown = (minvalue, counter, targetInput, checkmax) => {

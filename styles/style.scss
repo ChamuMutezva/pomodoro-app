@@ -81,7 +81,11 @@ time {
 .break__mode--btn:hover{
   cursor: pointer;
 }
-.break__mode__active {  
+.break__line {
+	width: 87.2%;
+	margin: auto;
+}
+.break__mode--btn:focus {
   background-color: $tx-bg-color; 
   color: $bg-color-main; 
 }
