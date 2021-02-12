@@ -114,17 +114,19 @@ timer__controller.addEventListener("click", (evt) => {
     console.log("pomodoro timer control")
     if (target.classList.contains("btn--up")) {
       console.log("increase the pomodoro timer")
-      if (pomodoro__count < 90) {
+      countUp(90, short__count, target__input, 5)
+     /* if (pomodoro__count < 90) {
         pomodoro__count++
         target__input.value = pomodoro__count
-      }
+      }*/
     }
     else if (target.classList.contains("btn--down")) {
       console.log("decrease the pomodoro timer")
-      if (pomodoro__count > 5) {
+      countDown(5, pomodoro__count, target__input, 90)
+     /* if (pomodoro__count > 5) {
         pomodoro__count--
         target__input.value = pomodoro__count
-      }
+      }*/
     }
   } else if (target__input.classList.contains("time__control__short")) {
     console.log("short timer break controll")
@@ -152,7 +154,7 @@ timer__controller.addEventListener("click", (evt) => {
 })
 
 const countUp = (maxvalue, counter, targetInput, checkmin) => {
-  
+
   if(Number(targetInput.value < checkmin)) {
     alert(`Minimum value should not be below ${checkmin}`)
     targetInput.value = checkmin
