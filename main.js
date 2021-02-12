@@ -148,12 +148,12 @@ timer__controller.addEventListener("click", (evt) => {
 const countUp = (maxvalue, counter, targetInput, checkmin) => {
 
   if(Number(targetInput.value < checkmin)) {
-    alert(`Minimum value should not be below ${checkmin}`)
+    //alert(`Minimum value should not be below ${checkmin}`)
     targetInput.value = checkmin
   }  
 
   if(Number(targetInput.value > maxvalue)) {
-    alert(`Maximum value should not exceed ${maxvalue}`)
+    //alert(`Maximum value should not exceed ${maxvalue}`)
     targetInput.value = maxvalue
   }
   counter = Number(targetInput.value)
@@ -170,7 +170,7 @@ const countUp = (maxvalue, counter, targetInput, checkmin) => {
 
 const countDown = (minvalue, counter, targetInput, checkmax) => {
   if(Number(targetInput.value < minvalue)) {
-    alert(`Minimum value should not be below ${minvalue}`)
+    //alert(`Minimum value should not be below ${minvalue}`)
     targetInput.value = minvalue
   }  
 
@@ -184,7 +184,7 @@ const countDown = (minvalue, counter, targetInput, checkmax) => {
   }
 
   if (Number(targetInput.value > checkmax)) {
-    alert(`Maximum value should not exceed ${checkmax}`)
+    //alert(`Maximum value should not exceed ${checkmax}`)
     targetInput.value = checkmax
   }
 }
