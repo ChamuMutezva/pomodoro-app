@@ -130,22 +130,67 @@ timer__controller.addEventListener("click", (evt) => {
     console.log("short timer break controll")
     if (target.classList.contains("btn--up")) {
       console.log("increase the short break timer")
-      if (short__count < 10) {
+     /* if (short__count < 10) {
         short__count++
         target__input.value = short__count
-      }
+        console.log(short__count)
+      }*/
+      countUp(10, short__count, target__input, 5)
     }
     else if (target.classList.contains("btn--down")) {
-      console.log("decrease the pomodoro timer")
-      if (pomodoro__count > 5) {
-        pomodoro__count--
-        target__input.value = pomodoro__count
-      }
+      console.log("decrease the short break timer")
+     /* short__count = Number(target__input.value)
+      if (short__count > 5) {
+        short__count--
+        target__input.value = short__count
+        console.log(short__count)
+      }*/
+      countDown(5, short__count, target__input, 10)
     }
   }
-  console.log(target__input)
+  // console.log(target__input)
 })
 
-const countUp = (min, max) => {
+const countUp = (maxvalue, counter, targetInput, checkmin) => {
+  
+  if(Number(targetInput.value < checkmin)) {
+    alert(`Minimum value should not be below ${checkmin}`)
+    targetInput.value = checkmin
+  }  
 
+  if(Number(targetInput.value > maxvalue)) {
+    alert(`Maximum value should not exceed ${maxvalue}`)
+    targetInput.value = maxvalue
+  }
+  counter = Number(targetInput.value)
+  if (counter < maxvalue) {
+    counter = counter + 1
+    targetInput.value = counter
+    console.log(counter)
+    console.log(maxvalue)
+    console.log(targetInput.value)   
+  }
+
+  
+}
+
+const countDown = (minvalue, counter, targetInput, checkmax) => {
+  if(Number(targetInput.value < minvalue)) {
+    alert(`Minimum value should not be below ${minvalue}`)
+    targetInput.value = minvalue
+  }  
+
+  counter = Number(targetInput.value)
+  if (counter > minvalue) {
+    counter = counter - 1
+    targetInput.value = counter
+    console.log(counter)
+    console.log(minvalue)
+    console.log(targetInput.value)   
+  }
+
+  if (Number(targetInput.value > checkmax)) {
+    alert(`Maximum value should not exceed ${checkmax}`)
+    targetInput.value = checkmax
+  }
 }
