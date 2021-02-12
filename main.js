@@ -21,11 +21,12 @@ const input__control__time = document.querySelector(".time__control")
 const count__up__short = document.querySelector(".btn--up")
 const count__down__short = document.querySelector(".btn--down")
 const time__control__short = document.querySelector(".time__control__short")
-
+const time__control__long = document.querySelector(".time__control__long")
 
 
 let pomodoro__count = Number(input__control__time.value)
 let short__count = Number(time__control__short.value)
+let long__count = Number(time__control__long.value)
 console.log(pomodoro__count)
 
 console.log(change__settings)
@@ -114,43 +115,34 @@ timer__controller.addEventListener("click", (evt) => {
     console.log("pomodoro timer control")
     if (target.classList.contains("btn--up")) {
       console.log("increase the pomodoro timer")
-      countUp(90, short__count, target__input, 5)
-     /* if (pomodoro__count < 90) {
-        pomodoro__count++
-        target__input.value = pomodoro__count
-      }*/
+      countUp(90, short__count, target__input, 5)     
     }
     else if (target.classList.contains("btn--down")) {
       console.log("decrease the pomodoro timer")
-      countDown(5, pomodoro__count, target__input, 90)
-     /* if (pomodoro__count > 5) {
-        pomodoro__count--
-        target__input.value = pomodoro__count
-      }*/
+      countDown(5, pomodoro__count, target__input, 90)    
     }
   } else if (target__input.classList.contains("time__control__short")) {
     console.log("short timer break controll")
     if (target.classList.contains("btn--up")) {
-      console.log("increase the short break timer")
-     /* if (short__count < 10) {
-        short__count++
-        target__input.value = short__count
-        console.log(short__count)
-      }*/
+      console.log("increase the short break timer")     
       countUp(10, short__count, target__input, 5)
     }
     else if (target.classList.contains("btn--down")) {
-      console.log("decrease the short break timer")
-     /* short__count = Number(target__input.value)
-      if (short__count > 5) {
-        short__count--
-        target__input.value = short__count
-        console.log(short__count)
-      }*/
+      console.log("decrease the short break timer")    
       countDown(5, short__count, target__input, 10)
     }
+  } else if (target__input.classList.contains("time__control__long")) {
+    console.log("long timer break controll")
+    if (target.classList.contains("btn--up")) {
+      console.log("increase the long break timer")     
+      countUp(20, long__count, target__input, 10)
+    }
+    else if (target.classList.contains("btn--down")) {
+      console.log("decrease the long break timer")    
+      countDown(10, long__count, target__input, 20)
+    }
   }
-  // console.log(target__input)
+   console.log(target__input)
 })
 
 const countUp = (maxvalue, counter, targetInput, checkmin) => {
