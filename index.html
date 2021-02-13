@@ -46,86 +46,84 @@
     <hr>
     <div class="time__settings">
       <h3>time(minutes)</h3>
-      <!--pomodoro timer-->
-      <div class="time__incremental">
-        <label for="timesetter">pomodoro
-          <input type="number" name="timesetter" id="timesetter" class="time__control" value="15" min="5" max="90"
-            step="1">
-        </label>
-        <div class="controls">
-          <button class="controls__timer">
-            <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
-              role="button" />
-          </button>
-          <button class="controls__timer">
-            <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
-              role="button">
-          </button>
+      <div class="timers">
+        <!--pomodoro timer-->
+        <div class="time__incremental">
+          <label for="timesetter">pomodoro
+            <input type="number" name="timesetter" id="timesetter" class="time__control" value="15" min="5" max="90"
+              step="1">
+          </label>
+          <div class="controls">
+            <button class="controls__timer">
+              <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
+                role="button" />
+            </button>
+            <button class="controls__timer">
+              <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
+                role="button">
+            </button>
+          </div>
         </div>
-      </div>
-      <!--short time break-->
-      <div class="time__incremental">
-        <label for="timesetter">short break
-          <input type="number" name="timesetter" id="timesetter" class="time__control__short" value="5" min="1" max="10"
-            step="1">
-        </label>
-        <div class="controls">
-          <button class="controls__timer">
-            <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
-              role="button" />
-          </button>
-          <button class="controls__timer">
-            <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
-              role="button">
-          </button>
+        <!--short time break-->
+        <div class="time__incremental">
+          <label for="timesetter">short break
+            <input type="number" name="timesetter" id="timesetter" class="time__control__short" value="5" min="1"
+              max="10" step="1">
+          </label>
+          <div class="controls">
+            <button class="controls__timer">
+              <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
+                role="button" />
+            </button>
+            <button class="controls__timer">
+              <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
+                role="button">
+            </button>
+          </div>
         </div>
-      </div>
 
-      <!--long time break-->
-      <div class="time__incremental">
-        <label for="timesetter">long break
-          <input type="number" name="timesetter" id="timesetter" class="time__control__long" value="10" min="1" max="20"
-            step="1">
-        </label>
-        <div class="controls">
-          <button class="controls__timer">
-            <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
-              role="button" />
-          </button>
-          <button class="controls__timer">
-            <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
-              role="button">
-          </button>
+        <!--long time break-->
+        <div class="time__incremental">
+          <label for="timesetter">long break
+            <input type="number" name="timesetter" id="timesetter" class="time__control__long" value="10" min="1"
+              max="20" step="1">
+          </label>
+          <div class="controls">
+            <button class="controls__timer">
+              <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
+                role="button" />
+            </button>
+            <button class="controls__timer">
+              <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
+                role="button">
+            </button>
+          </div>
         </div>
       </div>
-
     </div>
     <hr class="break__line">
+    <!--font selection -->
     <div class="fonts">
       <h3>font</h3>
+      <div class="font__selection">
+        <span class="kumbh font__type">Aa</span>
+        <span class="roboto font__type">Aa</span>
+        <span class="mono font__type">Aa</span>
+      </div>
     </div>
+    <hr class="break__line">
+    <!--color selection-->
+    <div class="colors">
+      <h3>color</h3>
+      <div class="color__selection">
+        <span class="orange color__type"></span>
+        <span class="turquoise color__type"></span>
+        <span class="purple color__type"></span>
+      </div>
+    </div>
+    <button class="apply">Apply</button>
   </div>
-  <!--
-  
-  short break
-  long break
 
-  start
-  pause
-  restart
-
- 
-
-  Time (minutes)
-  pomodoro
-  short break
-  long break
-
-  Font
-  Color
-
-  Apply
--->
   <script src="main.js"></script>
 </body>
 

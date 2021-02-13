@@ -27,7 +27,10 @@ let short__count = Number(time__control__short.value)
 let long__count = Number(time__control__long.value)
 console.log(pomodoro__count)
 
-pomodoroBtn.focus()
+window.onload = () => {
+  pomodoroBtn.focus()
+}
+
 console.log(change__settings)
 console.log(circumference)
 
@@ -82,6 +85,7 @@ change__settings.addEventListener("click", () => {
 })
 close__menu.addEventListener("click", () => {
   modal.classList.toggle("modal__settings__hide")
+  pomodoroBtn.focus()
 })
 
 timer__controller.addEventListener("click", (evt) => {

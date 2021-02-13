@@ -1,9 +1,4 @@
 @import 'variables';
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&family=Roboto+Slab:wght@300;400;500;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,700&display=swap');
-
-//font-family: 'Kumbh Sans', sans-serif;
-//font-family: 'Roboto Slab', serif;
-//font-family: 'Space Mono', monospace;
 * {
   padding: 0;
   margin: 0;
@@ -14,7 +9,7 @@ body {
   background-color: $bg-color-sec;
   height: 100%;
   position: relative;
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: $kumb-font;
   font-size: 16px;
 }
 
@@ -111,7 +106,7 @@ time {
   top: 46px;
   left: 5%;
   background-color: #FFFFFF;
-  height: 80vh;
+  height: auto;
   visibility: hidden;
   border-radius: 15px;  
 }
@@ -134,8 +129,8 @@ input.timesetter,
 input.time__control {
   position: relative;
 }
-.time__settings {
-	padding-top: 24px;
+.time__settings, .fonts, .colors {
+	padding: 24px 0 10px;
 }
 
 input[type="number"] {
@@ -196,4 +191,44 @@ h3 {
   margin: 0;
   border: none;
   background: none;
+}
+.font__selection, .color__selection {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+  margin: 14px auto;
+}
+.font__type, .color__type {
+	width: 40px;
+	display: inline-block;
+	height: 40px;
+	background-color: beige;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 100%;
+	font-size: 0.9375rem;
+	font-weight: 800;
+}
+.orange {
+	background-color: #f87070;
+}
+.turquoise {
+	background-color: #70f3f8;
+}
+.purple {
+	background-color: #d881f8;
+}
+.apply {
+	width: 140px;
+	margin: auto;
+	display: block;
+	padding: 18px;
+	border-radius: 26.5px;
+	border: none;
+  font-size: 1rem;  
+  font-weight: 800;
+	background-color: $tx-bg-color;
+  color: $tx-white;
+  position: relative;
+  top: 26px;
 }
