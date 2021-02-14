@@ -116,11 +116,11 @@ timer__controller.addEventListener("click", (evt) => {
     console.log("long timer break controll")
     if (target.classList.contains("btn--up")) {
       console.log("increase the long break timer")     
-      countUp(20, long__count, target__input, 10)
+      countUp(20, long__count, target__input, 11)
     }
     else if (target.classList.contains("btn--down")) {
       console.log("decrease the long break timer")    
-      countDown(10, long__count, target__input, 20)
+      countDown(11, long__count, target__input, 20)
     }
   }
    console.log(target__input)

@@ -3,7 +3,9 @@ https://chamumutezva.github.io/pomodoro-app/
 
 This is another challenge from [Frontend Mentor](https://www.frontendmentor.io)
 The ring was created through an inspiration from [Css Tricks](https://css-tricks.com/building-progress-ring-quickly/)
-
+Used input type number with minimun and maximum values to have auto buttons to increase and decrease the values,
+this did not work on mobile as the increamental buttons did not show up. Disabled the buttons and used custom buttoms 
+to control.
 ## Welcome! 👋
 
 Thanks for purchasing this premium Frontend Mentor coding challenge.
