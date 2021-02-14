@@ -168,9 +168,17 @@ input.time__control {
 }
 
 input[type="number"] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
   font-size: 1rem;
   font-weight: 600;
   width: 120px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 .time__incremental {
