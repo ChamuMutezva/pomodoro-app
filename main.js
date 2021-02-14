@@ -27,6 +27,8 @@ let short__count = Number(time__control__short.value)
 let long__count = Number(time__control__long.value)
 console.log(pomodoro__count)
 
+const form = document.querySelector("form")
+
 window.onload = () => {
   pomodoroBtn.focus()
 }
@@ -42,15 +44,6 @@ function setProgress(percent) {
   circle.style.strokeDashoffset = offset;
   //console.log(offset)
 }
-
-//const input = document.querySelector('input');
-//setProgress(input.value);
-
-//input.addEventListener('change', function (e) {
-//  if (input.value < 61 && input.value > -1) {
-// setProgress(input.value);
-// }
-//})
 
 function timer(seconds) {
   const temp = seconds
@@ -174,3 +167,7 @@ const countDown = (minvalue, counter, targetInput, checkmax) => {
     targetInput.value = checkmax
   }
 }
+
+form.addEventListener("submit", (evt)=> {
+  evt.preventDefault()
+})

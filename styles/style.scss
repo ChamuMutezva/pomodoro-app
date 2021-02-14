@@ -134,9 +134,9 @@ input.time__control {
 }
 
 input[type="number"] {
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
+//  -webkit-appearance: textfield;
+//  -moz-appearance: textfield;
+//  appearance: textfield;
   font-size: 1rem;
   font-weight: 600;
   width: 120px;
@@ -144,7 +144,7 @@ input[type="number"] {
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
+//  -webkit-appearance: none;
 }
 
 .time__incremental {
@@ -211,7 +211,7 @@ h3 {
 	z-index: 1;
   border-radius: 100%;
 }
-.fonts__label {
+.fonts__label, .color__label {
 	z-index: 5;
 	position: relative;
 	display: flex;
@@ -220,10 +220,14 @@ h3 {
 	height: 40px;
 	justify-content: center;
 }
+.color__label {
+  opacity: 0;
+}
 input[type="radio"]:checked + label {
   background: $bg-color-main; 
   color: $tx-white;
   border-radius: 100%;
+  opacity: 1;
 }
 .orange {
 	background-color: #f87070;

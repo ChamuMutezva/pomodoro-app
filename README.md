@@ -1,7 +1,8 @@
 # Frontend Mentor - Pomodoro app
 https://chamumutezva.github.io/pomodoro-app/
 
-![Design preview for the Pomodoro app coding challenge](./preview.jpg)
+This is another challenge from [Frontend Mentor](https://www.frontendmentor.io)
+The ring was created through an inspiration from [Css Tricks](https://css-tricks.com/building-progress-ring-quickly/)
 
 ## Welcome! 👋
 

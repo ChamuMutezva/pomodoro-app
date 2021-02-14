@@ -44,107 +44,115 @@
       <img src="./assets/icon-close.svg" alt="" class="close__menu">
     </div>
     <hr>
-    <div class="time__settings">
-      <h3>time(minutes)</h3>
-      <div class="timers">
-        <!--pomodoro timer-->
-        <div class="time__incremental">
-          <label for="timesetter">pomodoro
-            <input type="number" name="timesetter" id="timesetter" class="time__control" value="15" min="5" max="90"
-              step="1">
-          </label>
-          <div class="controls">
-            <button class="controls__timer">
-              <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
-                role="button" />
-            </button>
-            <button class="controls__timer">
-              <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
-                role="button">
-            </button>
+    <form>
+      <div class="time__settings">
+        <h3>time(minutes)</h3>
+        <div class="timers">
+          <!--pomodoro timer-->
+          <div class="time__incremental">
+            <label for="timesetter">pomodoro
+              <input type="number" name="timesetter" id="timesetter" class="time__control" value="15" min="5" max="90"
+                step="1">
+            </label> 
+<!---
+            <div class="controls">
+              <button class="controls__timer">
+                <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
+                  role="button" />
+              </button>
+              <button class="controls__timer">
+                <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
+                  role="button">
+              </button>
+            </div>
+          -->
           </div>
-        </div>
-        <!--short time break-->
-        <div class="time__incremental">
-          <label for="timesetter">short break
-            <input type="number" name="timesetter" id="timesetter" class="time__control__short" value="5" min="1"
-              max="10" step="1">
-          </label>
-          <div class="controls">
-            <button class="controls__timer">
-              <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
-                role="button" />
-            </button>
-            <button class="controls__timer">
-              <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
-                role="button">
-            </button>
+          <!--short time break-->
+          <div class="time__incremental">
+            <label for="timesetter">short break
+              <input type="number" name="timesetter" id="timesetter" class="time__control__short" value="5" min="1"
+                max="10" step="1">
+            </label>
+            <!--
+            <div class="controls">
+              <button class="controls__timer">
+                <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
+                  role="button" />
+              </button>
+              <button class="controls__timer">
+                <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
+                  role="button">
+              </button>
+            </div>
+          -->
           </div>
-        </div>
 
-        <!--long time break-->
-        <div class="time__incremental">
-          <label for="timesetter">long break
-            <input type="number" name="timesetter" id="timesetter" class="time__control__long" value="10" min="1"
-              max="20" step="1">
-          </label>
-          <div class="controls">
-            <button class="controls__timer">
-              <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
-                role="button" />
-            </button>
-            <button class="controls__timer">
-              <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
-                role="button">
-            </button>
+          <!--long time break-->
+          <div class="time__incremental">
+            <label for="timesetter">long break
+              <input type="number" name="timesetter" id="timesetter" class="time__control__long" value="15" min="11"
+                max="20" step="1">
+            </label>
+            <!--
+            <div class="controls">
+              <button class="controls__timer">
+                <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
+                  role="button" />
+              </button>
+              <button class="controls__timer">
+                <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
+                  role="button">
+              </button>
+            </div>
+          -->
           </div>
         </div>
       </div>
-    </div>
-    <hr class="break__line">
-    <!--font selection -->
-    <div class="fonts">
-      <h3>font</h3>
-      <div class="font__selection">
+      <hr class="break__line">
+      <!--font selection -->
+      <div class="fonts">
+        <h3>font</h3>
+        <div class="font__selection">
 
-        <div class="fonts__container">
-          <input type="radio" name="font__list" id="kumbh" class="fonts__list kumbh">
-          <label for="kumbh" class="fonts__label">Aa</label>
+          <div class="fonts__container">
+            <input type="radio" name="font__list" id="kumbh" class="fonts__list kumbh" checked>
+            <label for="kumbh" class="fonts__label">Aa</label>
+          </div>
+
+          <div class="fonts__container">
+            <input type="radio" name="font__list" id="roboto" class="fonts__list roboto">
+            <label for="roboto" class="fonts__label">Aa</label>
+          </div>
+
+          <div class="fonts__container">
+            <input type="radio" name="font__list" id="mono" class="fonts__list mono">
+            <label for="mono" class="fonts__label">Aa</label>
+          </div>
+
         </div>
-
-        <div class="fonts__container">
-          <input type="radio" name="font__list" id="roboto" class="fonts__list roboto">
-          <label for="roboto" class="fonts__label">Aa</label>
-        </div>
-
-        <div class="fonts__container">
-          <input type="radio" name="font__list" id="mono" class="fonts__list mono">
-          <label for="mono" class="fonts__label">Aa</label>
-        </div>
-
       </div>
-    </div>
-    <hr class="break__line">
-    <!--color selection-->
-    <div class="colors">
-      <h3>color</h3>
-      <div class="color__selection">
-        <div class="color__container">
-          <input type="radio" name="color__selector" id="orange" class="orange color__list">
-         <label for="orange" class="color__label">&#10003;</label>
-        </div>
-        <div class="color__container">
-          <input type="radio" name="color__selector" id="turquoise" class="turquoise color__list">
-          <label for="turquoise" class="color__label">&#10003;</label>
-        </div>
-        <div class="color__container">
-          <input type="radio" name="color__selector" id="purple" class="purple color__list">
-          <label for="purple" class="color__label">&#10003;</label>
-        </div>
+      <hr class="break__line">
+      <!--color selection-->
+      <div class="colors">
+        <h3>color</h3>
+        <div class="color__selection">
+          <div class="color__container">
+            <input type="radio" name="color__selector" id="orange" class="orange color__list" checked>
+            <label for="orange" class="color__label">&#10003;</label>
+          </div>
+          <div class="color__container">
+            <input type="radio" name="color__selector" id="turquoise" class="turquoise color__list">
+            <label for="turquoise" class="color__label">&#10003;</label>
+          </div>
+          <div class="color__container">
+            <input type="radio" name="color__selector" id="purple" class="purple color__list">
+            <label for="purple" class="color__label">&#10003;</label>
+          </div>
 
+        </div>
       </div>
-    </div>
-    <button class="apply">Apply</button>
+      <button class="apply">Apply</button>
+    </form>
   </div>
 
   <script src="main.js"></script>
