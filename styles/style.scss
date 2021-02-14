@@ -1,4 +1,5 @@
 @import 'variables';
+
 * {
   padding: 0;
   margin: 0;
@@ -57,33 +58,67 @@ h1 {
 
 .start__pause {
   width: 110px;
+  background-color: inherit;
+  border: none;
+  color: $tx-off-white;
+  font-size: 0.875rem;
+  letter-spacing: 13.13px;
+  font-weight: 600;
 }
 
 time {
-  font-size: 3rem;
+  font-size: 5rem;
   color: $tx-white;
+  font-weight: 800;
 }
 
 .break__mode--btn {
-	width: 106px;
-	padding: 16px;
-	background-color: inherit;
-	outline: none;
-	border: none;
-	border-radius: 30px;
-	color: $tx-off-white;
+  width: 106px;
+  padding: 16px;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  color: $tx-off-white;
+  height: 40px;
+  appearance: none;
+  border-radius: 30px;
 }
-.break__mode--btn:hover{
+
+input[type="radio"]:checked+label.break__mode__ctrls {
+  background: $btn-bg-color;
+  color: $bg-color-main;
+  border-radius: 30px;
+  opacity: 1;
+  left: 0px;
+  height: 40px;
+  width: 100%;
+  top: 0px;
+  text-align: center;
+  display: block;
+  line-height: 40px;
+}
+
+.break__mode__ctrls {
+  position: absolute;
+  left: 0px;
+  top: 10px;
+  color: $tx-off-white;
+}
+
+.break__mode--btn:hover {
   cursor: pointer;
 }
+
 .break__line {
-	width: 87.2%;
-	margin: auto;
+  width: 87.2%;
+  margin: auto;
 }
+
 .break__mode--btn:focus {
-  background-color: $tx-bg-color; 
-  color: $bg-color-main; 
+  background-color: $tx-bg-color;
+  color: $bg-color-main;
 }
+
 .break__mode {
   width: 87.2%;
   max-width: 350px;
@@ -108,7 +143,7 @@ time {
   background-color: #FFFFFF;
   height: auto;
   visibility: hidden;
-  border-radius: 15px;  
+  border-radius: 15px;
 }
 
 .modal__settings__hide {
@@ -129,13 +164,16 @@ input.timesetter,
 input.time__control {
   position: relative;
 }
-.time__settings, .fonts, .colors {
-	padding: 24px 0 10px;
+
+.time__settings,
+.fonts,
+.colors {
+  padding: 24px 0 10px;
 }
 
 input[type="number"] {
- -webkit-appearance: textfield;
- -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
   appearance: textfield;
   font-size: 1rem;
   font-weight: 600;
@@ -148,11 +186,12 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .time__incremental {
-	position: relative;
-	width: 85%;
-	margin: 14px auto;
-	
+  position: relative;
+  width: 85%;
+  margin: 14px auto;
+
 }
+
 .controls {
   position: absolute;
   right: 15px;
@@ -171,7 +210,9 @@ label {
   align-items: center;
 }
 
-.time__control, .time__control__short, .time__control__long {
+.time__control,
+.time__control__short,
+.time__control__long {
   padding: 10px;
   border-radius: 15px;
   background-color: #d3e2f0;
@@ -179,10 +220,10 @@ label {
 }
 
 h3 {
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 4.23px;
-	line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4.23px;
+  line-height: 100%;
   font-size: 0.69rem;
 }
 
@@ -192,63 +233,80 @@ h3 {
   border: none;
   background: none;
 }
-.font__selection, .color__selection {
-	display: flex;
-	justify-content: center;
-	gap: 30px;
+
+.font__selection,
+.color__selection {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
   margin: 14px auto;
 }
 
-.fonts__container , .color__container{
-	position: relative;
+.fonts__container,
+.color__container {
+  position: relative;
 }
-.fonts__list, .color__list {
-	appearance: none;
-	width: 40px;
-	height: 40px;
-	background-color: $tx-off-white;
-	position: absolute;
-	z-index: 1;
+
+.fonts__list,
+.color__list {
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background-color: $tx-off-white;
+  position: absolute;
+  z-index: 1;
   border-radius: 100%;
 }
-.fonts__label, .color__label {
-	z-index: 5;
-	position: relative;
-	display: flex;
-	/* place-content: center; */
-	width: 40px;
-	height: 40px;
-	justify-content: center;
+
+.fonts__label,
+.color__label {
+  z-index: 5;
+  position: relative;
+  display: flex;
+  /* place-content: center; */
+  width: 40px;
+  height: 40px;
+  justify-content: center;
 }
+
 .color__label {
   opacity: 0;
 }
-input[type="radio"]:checked + label {
-  background: $bg-color-main; 
+
+input[type="radio"]:checked+label {
+  background: $bg-color-main;
   color: $tx-white;
   border-radius: 100%;
   opacity: 1;
 }
+
 .orange {
-	background-color: #f87070;
+  background-color: #f87070;
 }
+
 .turquoise {
-	background-color: #70f3f8;
+  background-color: #70f3f8;
 }
+
 .purple {
-	background-color: #d881f8;
+  background-color: #d881f8;
 }
+
 .apply {
-	width: 140px;
-	margin: auto;
-	display: block;
-	padding: 18px;
-	border-radius: 26.5px;
-	border: none;
-  font-size: 1rem;  
+  width: 140px;
+  margin: auto;
+  display: block;
+  padding: 18px;
+  border-radius: 26.5px;
+  border: none;
+  font-size: 1rem;
   font-weight: 800;
-	background-color: $tx-bg-color;
+  background-color: $tx-bg-color;
   color: $tx-white;
   position: relative;
   top: 26px;
+}
+
+.pomodoro__ctrls {
+  position: relative;
 }

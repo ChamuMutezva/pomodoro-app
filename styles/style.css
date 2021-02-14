@@ -74,20 +74,52 @@ h1 {
 
 .start__pause {
   width: 110px;
+  background-color: inherit;
+  border: none;
+  color: #EFF1FA;
+  font-size: 0.875rem;
+  letter-spacing: 13.13px;
+  font-weight: 600;
 }
 
 time {
-  font-size: 3rem;
+  font-size: 5rem;
   color: #FFFFFF;
+  font-weight: 800;
 }
 
 .break__mode--btn {
   width: 106px;
   padding: 16px;
-  background-color: inherit;
   outline: none;
   border: none;
   border-radius: 30px;
+  color: #EFF1FA;
+  height: 40px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 30px;
+}
+
+input[type="radio"]:checked + label.break__mode__ctrls {
+  background: #F87070;
+  color: #161932;
+  border-radius: 30px;
+  opacity: 1;
+  left: 0px;
+  height: 40px;
+  width: 100%;
+  top: 0px;
+  text-align: center;
+  display: block;
+  line-height: 40px;
+}
+
+.break__mode__ctrls {
+  position: absolute;
+  left: 0px;
+  top: 10px;
   color: #EFF1FA;
 }
 
@@ -163,7 +195,9 @@ input.time__control {
   position: relative;
 }
 
-.time__settings, .fonts, .colors {
+.time__settings,
+.fonts,
+.colors {
   padding: 24px 0 10px;
 }
 
@@ -216,7 +250,9 @@ label {
           align-items: center;
 }
 
-.time__control, .time__control__short, .time__control__long {
+.time__control,
+.time__control__short,
+.time__control__long {
   padding: 10px;
   border-radius: 15px;
   background-color: #d3e2f0;
@@ -238,7 +274,8 @@ h3 {
   background: none;
 }
 
-.font__selection, .color__selection {
+.font__selection,
+.color__selection {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -249,11 +286,13 @@ h3 {
   margin: 14px auto;
 }
 
-.fonts__container, .color__container {
+.fonts__container,
+.color__container {
   position: relative;
 }
 
-.fonts__list, .color__list {
+.fonts__list,
+.color__list {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -265,7 +304,8 @@ h3 {
   border-radius: 100%;
 }
 
-.fonts__label, .color__label {
+.fonts__label,
+.color__label {
   z-index: 5;
   position: relative;
   display: -webkit-box;
@@ -315,5 +355,9 @@ input[type="radio"]:checked + label {
   color: #FFFFFF;
   position: relative;
   top: 26px;
+}
+
+.pomodoro__ctrls {
+  position: relative;
 }
 /*# sourceMappingURL=style.css.map */
