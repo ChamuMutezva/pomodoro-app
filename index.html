@@ -106,9 +106,22 @@
     <div class="fonts">
       <h3>font</h3>
       <div class="font__selection">
-        <span class="kumbh font__type">Aa</span>
-        <span class="roboto font__type">Aa</span>
-        <span class="mono font__type">Aa</span>
+
+        <div class="fonts__container">
+          <input type="radio" name="font__list" id="kumbh" class="fonts__list kumbh">
+          <label for="kumbh" class="fonts__label">Aa</label>
+        </div>
+
+        <div class="fonts__container">
+          <input type="radio" name="font__list" id="roboto" class="fonts__list roboto">
+          <label for="roboto" class="fonts__label">Aa</label>
+        </div>
+
+        <div class="fonts__container">
+          <input type="radio" name="font__list" id="mono" class="fonts__list mono">
+          <label for="mono" class="fonts__label">Aa</label>
+        </div>
+
       </div>
     </div>
     <hr class="break__line">
@@ -116,9 +129,19 @@
     <div class="colors">
       <h3>color</h3>
       <div class="color__selection">
-        <span class="orange color__type"></span>
-        <span class="turquoise color__type"></span>
-        <span class="purple color__type"></span>
+        <div class="color__container">
+          <input type="radio" name="color__selector" id="orange" class="orange color__list">
+         <label for="orange" class="color__label">&#10003;</label>
+        </div>
+        <div class="color__container">
+          <input type="radio" name="color__selector" id="turquoise" class="turquoise color__list">
+          <label for="turquoise" class="color__label">&#10003;</label>
+        </div>
+        <div class="color__container">
+          <input type="radio" name="color__selector" id="purple" class="purple color__list">
+          <label for="purple" class="color__label">&#10003;</label>
+        </div>
+
       </div>
     </div>
     <button class="apply">Apply</button>

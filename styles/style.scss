@@ -198,16 +198,32 @@ h3 {
 	gap: 30px;
   margin: 14px auto;
 }
-.font__type, .color__type {
+
+.fonts__container , .color__container{
+	position: relative;
+}
+.fonts__list, .color__list {
+	appearance: none;
 	width: 40px;
-	display: inline-block;
 	height: 40px;
-	background-color: beige;
-	line-height: 40px;
-	text-align: center;
-	border-radius: 100%;
-	font-size: 0.9375rem;
-	font-weight: 800;
+	background-color: $tx-off-white;
+	position: absolute;
+	z-index: 1;
+  border-radius: 100%;
+}
+.fonts__label {
+	z-index: 5;
+	position: relative;
+	display: flex;
+	/* place-content: center; */
+	width: 40px;
+	height: 40px;
+	justify-content: center;
+}
+input[type="radio"]:checked + label {
+  background: $bg-color-main; 
+  color: $tx-white;
+  border-radius: 100%;
 }
 .orange {
 	background-color: #f87070;

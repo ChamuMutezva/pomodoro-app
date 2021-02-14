@@ -249,16 +249,40 @@ h3 {
   margin: 14px auto;
 }
 
-.font__type, .color__type {
+.fonts__container, .color__container {
+  position: relative;
+}
+
+.fonts__list, .color__list {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 40px;
-  display: inline-block;
   height: 40px;
-  background-color: beige;
-  line-height: 40px;
-  text-align: center;
+  background-color: #EFF1FA;
+  position: absolute;
+  z-index: 1;
   border-radius: 100%;
-  font-size: 0.9375rem;
-  font-weight: 800;
+}
+
+.fonts__label {
+  z-index: 5;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* place-content: center; */
+  width: 40px;
+  height: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+input[type="radio"]:checked + label {
+  background: #161932;
+  color: #FFFFFF;
+  border-radius: 100%;
 }
 
 .orange {
