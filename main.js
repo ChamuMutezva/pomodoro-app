@@ -212,14 +212,20 @@ const changeFont = () => {
   console.log(fonts)
   fonts.forEach(fontSelect  => {
     if (fontSelect.checked) {
-      console.log(fontSelect.id)
-      if(fontSelect.id == "robot") {
-        body.classList.add("robot__font")
+       console.log(fontSelect.id)
+      if (fontSelect.id == "roboto") {
+        console.log(fontSelect.id)
+        body.classList.add("roboto__font")
+        body.classList.remove("kumbh__font")
+        body.classList.remove("mono__font")
       } else if (fontSelect.id == "mono") {
         body.classList.add("mono__font")
+        body.classList.remove("roboto__font")
+        body.classList.remove("kumbh__font")
       } else {
         body.classList.remove("roboto__font")
         body.classList.remove("mono__font")
+        body.classList.add("kumbh__font")
       }
     }
     // console.log(fontSelect)

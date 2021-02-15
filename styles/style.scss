@@ -9,9 +9,11 @@ html,
 body {
   background-color: $bg-color-sec;
   height: 100%;
-  position: relative;
-  font-family: $kumb-font;
+  position: relative; 
   font-size: 16px;
+}
+.kumbh__font {
+  font-family: $kumb-font;
 }
 .mono__font {
   font-family: $space-font;
@@ -89,7 +91,7 @@ h3 {
 }
 
 time {
-  font-size: 5rem;
+  font-size: 4rem;
   color: $tx-white;
   font-weight: 800;
 }
