@@ -13,7 +13,12 @@ body {
   font-family: $kumb-font;
   font-size: 16px;
 }
-
+.mono__font {
+  font-family: $space-font;
+}
+.roboto__font {
+  font-family: $roboto-font;
+}
 h1 {
   text-align: center;
   color: white;
@@ -111,8 +116,8 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   border-radius: 30px;
   opacity: 1;
   left: 0px;
-  height: 40px;
-  width: 100%;
+ /* height: 40px;
+  width: 100%;*/
   top: 0px;
   text-align: center;
   display: block;
@@ -234,6 +239,7 @@ label {
   justify-content: space-between;
   margin: auto;
   align-items: center;
+  font-size: 0.875rem;
 }
 
 .time__control,

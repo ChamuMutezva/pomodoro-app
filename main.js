@@ -42,7 +42,6 @@ function setProgress(percent) {
 
 function timer(seconds) {
   const temp = seconds
-
   const progressChecker = setInterval(function () {
     const displayTime = document.querySelector("time")
     const mins = Math.floor(seconds / 60)
@@ -60,7 +59,7 @@ function timer(seconds) {
 
     if (!paused) {
       clearInterval(progressChecker)
-     // console.log(seconds)
+      // console.log(seconds)
     }
 
 
@@ -166,13 +165,22 @@ const countDown = (minvalue, counter, targetInput, checkmax) => {
   }
 }
 
+//settings panel form
 main__settings.addEventListener("submit", (evt) => {
   console.log("form submit")
   evt.preventDefault()
+  changeColor()
+  changeFont()
+
+
+})
+
+//color selector function
+const changeColor = () => {
   //progress ring
   const progress__ring = document.querySelector(".progress-ring__circle")
-  const checkedBtn = document.querySelector("input[type='radio']:checked + label.break__mode__ctrls")
-  console.log(checkedBtn)
+  const checkedBtns = Array.from(document.querySelectorAll("input[type='radio']:checked + label.break__mode__ctrls"))
+  // console.log(checkedBtn)
   const colors = Array.from(document.querySelectorAll(".color__list"))
   colors.forEach(colored => {
     if (colored.checked) {
@@ -180,18 +188,43 @@ main__settings.addEventListener("submit", (evt) => {
       console.log(colored.id)
       if (colored.id == "turquoise") {
         progress__ring.classList.add("lime__ring")
-       // checkedBtn.classList.add("lime__btn")
-       checkedBtn.style.backgroundColor = "#70F380"
-      } else if(colored.id == "purple") {
+        checkedBtns.forEach(btn => {
+          // btn.classList.add("lime__btn")
+          btn.style.backgroundColor = "#70F380"
+        })
+        // checkedBtn.classList.add("lime__btn")
+        //checkedBtn.style.backgroundColor = "#70F380"
+      } else if (colored.id == "purple") {
         progress__ring.classList.add("purple__ring")
-        checkedBtn.style.backgroundColor = "#D881F8"
+        // checkedBtn.style.backgroundColor = "#D881F8"
       } else {
         progress__ring.classList.remove("purple__ring")
         progress__ring.classList.remove("lime__ring")
       }
     }
   })
-})
+}
+
+//change font function
+const changeFont = () => {
+  const fonts = Array.from(document.querySelectorAll(".fonts__list"))
+  const body = document.querySelector("body")
+  console.log(fonts)
+  fonts.forEach(fontSelect  => {
+    if (fontSelect.checked) {
+      console.log(fontSelect.id)
+      if(fontSelect.id == "robot") {
+        body.classList.add("robot__font")
+      } else if (fontSelect.id == "mono") {
+        body.classList.add("mono__font")
+      } else {
+        body.classList.remove("roboto__font")
+        body.classList.remove("mono__font")
+      }
+    }
+    // console.log(fontSelect)
+  })
+}
 
 start__pause.addEventListener("click", () => {
 
