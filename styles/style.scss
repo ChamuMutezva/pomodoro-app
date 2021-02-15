@@ -21,12 +21,25 @@ h1 {
   font-size: 1.5rem;
 }
 
+h3 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4.23px;
+  line-height: 100%;
+  font-size: 0.69rem;
+}
+
+.wrapper {
+  position: relative;
+}
+/*-------------------------------------------------
+          svg circular ring
+---------------------------------------------------*/
 .progress-ring {
   box-shadow: 0px 1px 5px 17px #292d53;
   background-color: $bg-color-main;
   border-radius: 50%;
 }
-
 .progress-ring__circle {
   stroke: $tx-bg-color;
   transition: 0.35s stroke-dashoffset;
@@ -34,18 +47,21 @@ h1 {
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
 }
-
-.wrapper {
-  position: relative;
+.lime__ring {
+  stroke: $tx-lime;
 }
-
+.purple__ring {
+  stroke: $tx-purple;
+}
 .pomodoro__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
 }
-
+/* ---------------------------------
+    start and pause timer
+    ------------------------------*/
 .ctrls {
   position: relative;
   bottom: 200px;
@@ -56,6 +72,7 @@ h1 {
   align-items: center;
 }
 
+/* pausing and starting timer */
 .start__pause {
   width: 110px;
   background-color: inherit;
@@ -72,6 +89,9 @@ time {
   font-weight: 800;
 }
 
+/* -------------------------------------------
+        pomodoro, short and long break selector
+        --------------------------------------*/
 .break__mode--btn {
   width: 106px;
   padding: 16px;
@@ -83,7 +103,8 @@ time {
   appearance: none;
   border-radius: 30px;
 }
-
+/*when input radio is checked, label must
+change background and color among other things*/
 input[type="radio"]:checked+label.break__mode__ctrls {
   background: $btn-bg-color;
   color: $bg-color-main;
@@ -97,7 +118,9 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   display: block;
   line-height: 40px;
 }
-
+.lime__btn {
+  background-color: $tx-lime;
+}
 .break__mode__ctrls {
   position: absolute;
   left: 0px;
@@ -113,12 +136,14 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   width: 87.2%;
   margin: auto;
 }
-
+/*
 .break__mode--btn:focus {
   background-color: $tx-bg-color;
   color: $bg-color-main;
+}*/
+.break__mode--btn:hover {
+  cursor: pointer;
 }
-
 .break__mode {
   width: 87.2%;
   max-width: 350px;
@@ -134,7 +159,9 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   margin: auto;
   display: block;
 }
-
+/* -------------------------------------
+  MODAL SETTINGS PAGE
+  ------------------------------------*/
 .modal__settings {
   width: 87.2%;
   position: absolute;
@@ -191,7 +218,6 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 14px auto;
 
 }
-
 .controls {
   position: absolute;
   right: 15px;
@@ -217,14 +243,6 @@ label {
   border-radius: 15px;
   background-color: #d3e2f0;
   border: none;
-}
-
-h3 {
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 4.23px;
-  line-height: 100%;
-  font-size: 0.69rem;
 }
 
 .controls__timer {

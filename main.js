@@ -2,10 +2,10 @@
 const circle = document.querySelector('circle')
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
-const TIME_LIMIT = 1500
-const displayTime = document.querySelector("time")
+let TIME_LIMIT = 300
+
 const start__pause = document.querySelector(".start__pause")
-let paused = true
+let paused = false
 console.log(start__pause)
 
 const change__settings = document.querySelector(".menu__options--btn") //menu options selector
@@ -28,7 +28,6 @@ let long__count = Number(time__control__long.value)
 console.log(pomodoro__count)
 
 const main__settings = document.querySelector(".main__ctrl__panel")
-
 console.log(change__settings)
 console.log(circumference)
 
@@ -38,32 +37,36 @@ circle.style.strokeDashoffset = `${circumference}`;
 function setProgress(percent) {
   const offset = circumference - percent / TIME_LIMIT * circumference;
   circle.style.strokeDashoffset = offset;
-  //console.log(offset)
+  console.log(offset)
 }
 
 function timer(seconds) {
   const temp = seconds
 
   const progressChecker = setInterval(function () {
-
+    const displayTime = document.querySelector("time")
     const mins = Math.floor(seconds / 60)
     const displayMin = mins < 10 ? `0${mins}` : mins
     const secs = seconds % 60
     const displaySec = secs < 10 ? `0${secs}` : secs
     seconds--
     displayTime.innerText = `${displayMin}:${displaySec}`
-    //console.log(seconds)
-    // console.log(temp)
-    //const cir = circumference - ((circumference * seconds) / temp)
-    //console.log(cir)
+
 
     if (seconds === 0) {
       displayTime.innerHTML = "00:00"
       clearInterval(progressChecker)
     }
 
+    if (!paused) {
+      clearInterval(progressChecker)
+     // console.log(seconds)
+    }
+
+
     setProgress((temp - seconds))
   }, 1000)
+
 }
 
 timer(TIME_LIMIT)
@@ -74,7 +77,6 @@ change__settings.addEventListener("click", () => {
 })
 close__menu.addEventListener("click", () => {
   modal.classList.toggle("modal__settings__hide")
-  //pomodoroBtn.focus()
 })
 
 timer__controller.addEventListener("click", (evt) => {
@@ -165,12 +167,69 @@ const countDown = (minvalue, counter, targetInput, checkmax) => {
 }
 
 main__settings.addEventListener("submit", (evt) => {
+  console.log("form submit")
   evt.preventDefault()
+  //progress ring
+  const progress__ring = document.querySelector(".progress-ring__circle")
+  const checkedBtn = document.querySelector("input[type='radio']:checked + label.break__mode__ctrls")
+  console.log(checkedBtn)
+  const colors = Array.from(document.querySelectorAll(".color__list"))
+  colors.forEach(colored => {
+    if (colored.checked) {
+
+      console.log(colored.id)
+      if (colored.id == "turquoise") {
+        progress__ring.classList.add("lime__ring")
+       // checkedBtn.classList.add("lime__btn")
+       checkedBtn.style.backgroundColor = "#70F380"
+      } else if(colored.id == "purple") {
+        progress__ring.classList.add("purple__ring")
+        checkedBtn.style.backgroundColor = "#D881F8"
+      } else {
+        progress__ring.classList.remove("purple__ring")
+        progress__ring.classList.remove("lime__ring")
+      }
+    }
+  })
 })
 
 start__pause.addEventListener("click", () => {
+
   console.log("start and pause button")
   paused = !paused
-  console.log(paused) 
-  paused ? start__pause.innerHTML = "Start" : start__pause.innerHTML = "Pause"
+  console.log(paused)
+  if (paused) {
+    start__pause.innerHTML = "Pause"
+    if (TIME_LIMIT <= 0) {
+      return
+    } else {
+      timer(TIME_LIMIT)
+    }
+
+  } else {
+    start__pause.innerHTML = "Start"
+    if (TIME_LIMIT <= 0) {
+      return
+    } else {
+      time__left()
+      // clearInterval(setProgress)
+      timer(TIME_LIMIT)
+    }
+
+  }
+  //paused ? start__pause.innerHTML = "Start" : start__pause.innerHTML = "Pause"
+
 })
+
+//calculate time left on clock
+const time__left = () => {
+  const time__left = document.querySelector("time").innerHTML
+  const splitTime = time__left.split(":")
+  const minutes__left = Number(splitTime[0])
+  const seconds__left = Number(splitTime[1])
+  console.log(minutes__left, seconds__left)
+  TIME_LIMIT = minutes__left * 60 + seconds__left
+
+  // setProgress(TIME_LIMIT)
+  console.log(TIME_LIMIT)
+}

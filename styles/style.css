@@ -20,6 +20,21 @@ h1 {
   font-size: 1.5rem;
 }
 
+h3 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4.23px;
+  line-height: 100%;
+  font-size: 0.69rem;
+}
+
+.wrapper {
+  position: relative;
+}
+
+/*-------------------------------------------------
+          svg circular ring
+---------------------------------------------------*/
 .progress-ring {
   -webkit-box-shadow: 0px 1px 5px 17px #292d53;
           box-shadow: 0px 1px 5px 17px #292d53;
@@ -37,8 +52,12 @@ h1 {
           transform-origin: 50% 50%;
 }
 
-.wrapper {
-  position: relative;
+.lime__ring {
+  stroke: #70F380;
+}
+
+.purple__ring {
+  stroke: #D881F8;
 }
 
 .pomodoro__container {
@@ -55,6 +74,9 @@ h1 {
   gap: 30px;
 }
 
+/* ---------------------------------
+    start and pause timer
+    ------------------------------*/
 .ctrls {
   position: relative;
   bottom: 200px;
@@ -72,6 +94,7 @@ h1 {
           align-items: center;
 }
 
+/* pausing and starting timer */
 .start__pause {
   width: 110px;
   background-color: inherit;
@@ -88,6 +111,9 @@ time {
   font-weight: 800;
 }
 
+/* -------------------------------------------
+        pomodoro, short and long break selector
+        --------------------------------------*/
 .break__mode--btn {
   width: 106px;
   padding: 16px;
@@ -102,6 +128,8 @@ time {
   border-radius: 30px;
 }
 
+/*when input radio is checked, label must
+change background and color among other things*/
 input[type="radio"]:checked + label.break__mode__ctrls {
   background: #F87070;
   color: #161932;
@@ -114,6 +142,10 @@ input[type="radio"]:checked + label.break__mode__ctrls {
   text-align: center;
   display: block;
   line-height: 40px;
+}
+
+.lime__btn {
+  background-color: #70F380;
 }
 
 .break__mode__ctrls {
@@ -132,9 +164,13 @@ input[type="radio"]:checked + label.break__mode__ctrls {
   margin: auto;
 }
 
+/*
 .break__mode--btn:focus {
-  background-color: #F87070;
-  color: #161932;
+  background-color: $tx-bg-color;
+  color: $bg-color-main;
+}*/
+.break__mode--btn:hover {
+  cursor: pointer;
 }
 
 .break__mode {
@@ -159,6 +195,9 @@ input[type="radio"]:checked + label.break__mode__ctrls {
   display: block;
 }
 
+/* -------------------------------------
+  MODAL SETTINGS PAGE
+  ------------------------------------*/
 .modal__settings {
   width: 87.2%;
   position: absolute;
@@ -257,14 +296,6 @@ label {
   border-radius: 15px;
   background-color: #d3e2f0;
   border: none;
-}
-
-h3 {
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 4.23px;
-  line-height: 100%;
-  font-size: 0.69rem;
 }
 
 .controls__timer {
