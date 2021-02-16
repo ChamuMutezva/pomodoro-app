@@ -3,6 +3,7 @@ const circle = document.querySelector('circle')
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
 let TIME_LIMIT = 300
+let resetTimers  = false
 
 const start__pause = document.querySelector(".start__pause")
 let paused = false
@@ -50,7 +51,11 @@ function timer(seconds) {
     const displaySec = secs < 10 ? `0${secs}` : secs
     seconds--
     displayTime.innerText = `${displayMin}:${displaySec}`
-
+   
+    if (resetTimers) {
+      clearInterval(progressChecker)
+      resetTimers = false
+    }
 
     if (seconds === 0) {
       displayTime.innerHTML = "00:00"
@@ -61,6 +66,7 @@ function timer(seconds) {
       clearInterval(progressChecker)
       // console.log(seconds)
     }
+   
 
 
     setProgress((temp - seconds))
@@ -169,10 +175,13 @@ const countDown = (minvalue, counter, targetInput, checkmax) => {
 main__settings.addEventListener("submit", (evt) => {
   console.log("form submit")
   evt.preventDefault()
+  modal.classList.toggle("modal__settings__hide")
   changeColor()
   changeFont()
-
-
+  setPomodoro()
+  alert("changes initiated")
+  //resetTimers = false
+  //timer(TIME_LIMIT)
 })
 
 //color selector function
@@ -210,9 +219,9 @@ const changeFont = () => {
   const fonts = Array.from(document.querySelectorAll(".fonts__list"))
   const body = document.querySelector("body")
   console.log(fonts)
-  fonts.forEach(fontSelect  => {
+  fonts.forEach(fontSelect => {
     if (fontSelect.checked) {
-       console.log(fontSelect.id)
+      console.log(fontSelect.id)
       if (fontSelect.id == "roboto") {
         console.log(fontSelect.id)
         body.classList.add("roboto__font")
@@ -230,6 +239,14 @@ const changeFont = () => {
     }
     // console.log(fontSelect)
   })
+}
+
+const setPomodoro = () => {
+  resetTimers = true
+  const pomodoroTimer = document.querySelector(".time__control")
+  TIME_LIMIT = pomodoroTimer.value * 60
+  timer(TIME_LIMIT)
+ // resetTimers = false
 }
 
 start__pause.addEventListener("click", () => {

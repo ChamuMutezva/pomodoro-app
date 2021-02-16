@@ -9,8 +9,11 @@ body {
   background-color: #1E213F;
   height: 100%;
   position: relative;
-  font-family: "Kumbh Sans", sans-serif;
   font-size: 16px;
+}
+
+.kumbh__font {
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 .mono__font {
@@ -144,11 +147,9 @@ input[type="radio"]:checked + label.break__mode__ctrls {
   border-radius: 30px;
   opacity: 1;
   left: 0px;
-  /* height: 40px;
-  width: 100%;*/
+  place-content: center;
   top: 0px;
   text-align: center;
-  display: block;
   line-height: 40px;
 }
 

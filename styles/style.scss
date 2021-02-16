@@ -9,18 +9,22 @@ html,
 body {
   background-color: $bg-color-sec;
   height: 100%;
-  position: relative; 
+  position: relative;
   font-size: 16px;
 }
+
 .kumbh__font {
   font-family: $kumb-font;
 }
+
 .mono__font {
   font-family: $space-font;
 }
+
 .roboto__font {
   font-family: $roboto-font;
 }
+
 h1 {
   text-align: center;
   color: white;
@@ -39,6 +43,7 @@ h3 {
 .wrapper {
   position: relative;
 }
+
 /*-------------------------------------------------
           svg circular ring
 ---------------------------------------------------*/
@@ -47,6 +52,7 @@ h3 {
   background-color: $bg-color-main;
   border-radius: 50%;
 }
+
 .progress-ring__circle {
   stroke: $tx-bg-color;
   transition: 0.35s stroke-dashoffset;
@@ -54,18 +60,22 @@ h3 {
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
 }
+
 .lime__ring {
   stroke: $tx-lime;
 }
+
 .purple__ring {
   stroke: $tx-purple;
 }
+
 .pomodoro__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 30px;
 }
+
 /* ---------------------------------
     start and pause timer
     ------------------------------*/
@@ -110,6 +120,7 @@ time {
   appearance: none;
   border-radius: 30px;
 }
+
 /*when input radio is checked, label must
 change background and color among other things*/
 input[type="radio"]:checked+label.break__mode__ctrls {
@@ -118,16 +129,17 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   border-radius: 30px;
   opacity: 1;
   left: 0px;
- /* height: 40px;
-  width: 100%;*/
+  place-content: center;
   top: 0px;
   text-align: center;
-  display: block;
+  // display: block;
   line-height: 40px;
 }
+
 .lime__btn {
   background-color: $tx-lime;
 }
+
 .break__mode__ctrls {
   position: absolute;
   left: 0px;
@@ -143,6 +155,7 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   width: 87.2%;
   margin: auto;
 }
+
 /*
 .break__mode--btn:focus {
   background-color: $tx-bg-color;
@@ -151,6 +164,7 @@ input[type="radio"]:checked+label.break__mode__ctrls {
 .break__mode--btn:hover {
   cursor: pointer;
 }
+
 .break__mode {
   width: 87.2%;
   max-width: 350px;
@@ -166,6 +180,7 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   margin: auto;
   display: block;
 }
+
 /* -------------------------------------
   MODAL SETTINGS PAGE
   ------------------------------------*/
@@ -225,6 +240,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 14px auto;
 
 }
+
 .controls {
   position: absolute;
   right: 15px;
