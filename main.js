@@ -27,7 +27,7 @@ let pomodoro__count = Number(input__control__time.value)
 let short__count = Number(time__control__short.value)
 let long__count = Number(time__control__long.value)
 console.log(pomodoro__count)
-
+TIME_LIMIT = pomodoro__count * 60
 const main__settings = document.querySelector(".main__ctrl__panel")
 console.log(change__settings)
 console.log(circumference)
@@ -243,8 +243,8 @@ const changeFont = () => {
 
 const setPomodoro = () => {
   resetTimers = true
-  const pomodoroTimer = document.querySelector(".time__control")
-  TIME_LIMIT = pomodoroTimer.value * 60
+  //const pomodoroTimer = document.querySelector(".time__control")
+  TIME_LIMIT = input__control__time.value * 60
   timer(TIME_LIMIT)
  // resetTimers = false
 }
