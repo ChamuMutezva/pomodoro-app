@@ -3,12 +3,17 @@ const circle = document.querySelector('circle')
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
 let TIME_LIMIT = 300
-let resetTimers  = false
+let resetTimers = false
+let resetTimeSelectors = false
+let resetShort = false
+let resetLong = false
 
 const start__pause = document.querySelector(".start__pause")
 let paused = false
 console.log(start__pause)
 
+const break__selectors = Array.from(document.querySelectorAll(".break__mode--btn"))
+//console.log(break__selectors)
 const change__settings = document.querySelector(".menu__options--btn") //menu options selector
 const close__menu = document.querySelector(".close__menu") //close the settings menu
 const modal = document.querySelector(".modal__settings")
@@ -20,9 +25,9 @@ console.log(timer__controller)
 //pomodoro time controllers
 const count__up = document.querySelector(".btn--up")
 const count__down = document.querySelector(".btn--down")
-const input__control__time = document.querySelector(".time__control")
-const time__control__short = document.querySelector(".time__control__short")
-const time__control__long = document.querySelector(".time__control__long")
+const input__control__time = document.querySelector(".time__control") //pomodoro control
+const time__control__short = document.querySelector(".time__control__short") //short break control
+const time__control__long = document.querySelector(".time__control__long") // long break control
 let pomodoro__count = Number(input__control__time.value)
 let short__count = Number(time__control__short.value)
 let long__count = Number(time__control__long.value)
@@ -31,6 +36,8 @@ TIME_LIMIT = pomodoro__count * 60
 const main__settings = document.querySelector(".main__ctrl__panel")
 console.log(change__settings)
 console.log(circumference)
+
+//input__control__time.addEventListener
 
 circle.style.strokeDasharray = `${circumference} ${circumference}`;
 circle.style.strokeDashoffset = `${circumference}`;
@@ -51,10 +58,26 @@ function timer(seconds) {
     const displaySec = secs < 10 ? `0${secs}` : secs
     seconds--
     displayTime.innerText = `${displayMin}:${displaySec}`
-   
+
+    //reset timers when changes has been implemented in the
+    //form and form has been submitted.
     if (resetTimers) {
       clearInterval(progressChecker)
       resetTimers = false
+    }
+    if (resetShort) {
+      clearInterval(progressChecker)
+      resetShort = false
+    }
+    if (resetLong) {
+      clearInterval(progressChecker)
+      resetLong = false
+    }
+    //reset timers when changing from one mode to another
+    //eg when changing from pomodoro to short break or to long break
+    if (resetTimeSelectors) {
+      clearInterval(progressChecker)
+      resetTimeSelectors = false
     }
 
     if (seconds === 0) {
@@ -66,7 +89,6 @@ function timer(seconds) {
       clearInterval(progressChecker)
       // console.log(seconds)
     }
-   
 
 
     setProgress((temp - seconds))
@@ -75,13 +97,41 @@ function timer(seconds) {
 }
 
 timer(TIME_LIMIT)
+/* make a selection among pomodoro, short and long breaks 
+      ________-----------------------------____________
+*/
+break__selectors.forEach(selector => {
+  selector.onchange = () => {
+    resetTimeSelectors = true
+    if (selector.id == "short") {
+      TIME_LIMIT = short__count * 60
+      console.log(selector)
+      console.log(short__count)
+      timer(TIME_LIMIT)
+    } else if (selector.id == "long") {
+      TIME_LIMIT = long__count * 60
+      console.log(selector)
+      console.log(long__count)
+      timer(TIME_LIMIT)
+    } else {
+      TIME_LIMIT = pomodoro__count * 60
+      timer(TIME_LIMIT)
+    }
+  }
+})
 
 /* modal setting */
 change__settings.addEventListener("click", () => {
   modal.classList.toggle("modal__settings__hide")
+  // break__selectors.forEach(selector => {
+  // resetTimers = true
+  //  resetTimeSelectors = true
+  //})
 })
 close__menu.addEventListener("click", () => {
   modal.classList.toggle("modal__settings__hide")
+  // resetTimers = false
+  //resetTimeSelectors = true
 })
 
 timer__controller.addEventListener("click", (evt) => {
@@ -171,7 +221,7 @@ const countDown = (minvalue, counter, targetInput, checkmax) => {
   }
 }
 
-//settings panel form
+//main settings panel form
 main__settings.addEventListener("submit", (evt) => {
   console.log("form submit")
   evt.preventDefault()
@@ -179,9 +229,12 @@ main__settings.addEventListener("submit", (evt) => {
   changeColor()
   changeFont()
   setPomodoro()
+ shortBreakMode()
+ // longBreakMode()
   alert("changes initiated")
-  //resetTimers = false
-  //timer(TIME_LIMIT)
+  //  paused = false
+  //  resetTimers = false
+
 })
 
 //color selector function
@@ -245,6 +298,22 @@ const setPomodoro = () => {
   resetTimers = true
   //const pomodoroTimer = document.querySelector(".time__control")
   TIME_LIMIT = input__control__time.value * 60
+  timer(TIME_LIMIT)
+  // resetTimers = false
+}
+
+const shortBreakMode = () => {
+  resetShort = true
+  resetTimers = true
+  TIME_LIMIT = time__control__short.value * 60
+  timer(TIME_LIMIT)
+  //resetTimers = false
+}
+
+const longBreakMode = () => {
+   resetLong = true
+   resetTimers = true
+  TIME_LIMIT = time__control__long.value * 60
   timer(TIME_LIMIT)
  // resetTimers = false
 }
