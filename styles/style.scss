@@ -156,11 +156,6 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   margin: auto;
 }
 
-/*
-.break__mode--btn:focus {
-  background-color: $tx-bg-color;
-  color: $bg-color-main;
-}*/
 .break__mode--btn:hover {
   cursor: pointer;
 }
@@ -358,30 +353,54 @@ input[type="radio"]:checked+label {
     margin-top: 80px;
     font-size: 2rem;
   }
+
   .break__mode {
     max-width: 373px;
   }
-  .pomodoro__container {    
+
+  .pomodoro__container {
     gap: 55px;
   }
+
   .break__mode--btn {
     width: 120px;
-    padding: 24px;    
+    padding: 24px;
   }
-  input[type="radio"]:checked + label.break__mode__ctrls {    
+
+  input[type="radio"]:checked+label.break__mode__ctrls {
     line-height: 48px;
   }
-  .progress-ring {    
+
+  .progress-ring {
     transform: scale(1.35);
     margin-top: 55px;
   }
-  .ctrls {   
-    bottom: 240px;   
+
+  .ctrls {
+    bottom: 240px;
   }
+
   time {
-    font-size: 6.25rem;    
+    font-size: 6.25rem;
   }
-  .start__pause {   
-    font-size: 1rem;   
+
+  .start__pause {
+    font-size: 1rem;
+  }
+
+  .fonts,
+  .colors {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 85%;
+  }
+
+  .font__selection,
+  .color__selection {
+    margin: 0;
   }
 }

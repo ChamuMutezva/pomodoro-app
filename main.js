@@ -10,6 +10,7 @@ let resetLong = false // // resetting when long timer is set in the settings pag
 
 const start__pause = document.querySelector(".start__pause")
 let paused = false // Pausing the timer
+let alarm = "./assets/Alarm06.wav"
 console.log(start__pause)
 
 const break__selectors = Array.from(document.querySelectorAll(".break__mode--btn"))

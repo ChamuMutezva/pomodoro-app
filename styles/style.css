@@ -173,11 +173,6 @@ input[type="radio"]:checked + label.break__mode__ctrls {
   margin: auto;
 }
 
-/*
-.break__mode--btn:focus {
-  background-color: $tx-bg-color;
-  color: $bg-color-main;
-}*/
 .break__mode--btn:hover {
   cursor: pointer;
 }
@@ -433,6 +428,30 @@ input[type="radio"]:checked + label {
   }
   .start__pause {
     font-size: 1rem;
+  }
+  .fonts,
+  .colors {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: auto;
+    width: 85%;
+  }
+  .font__selection,
+  .color__selection {
+    margin: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
