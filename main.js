@@ -3,13 +3,13 @@ const circle = document.querySelector('circle')
 const radius = circle.r.baseVal.value;
 const circumference = radius * 2 * Math.PI;
 let TIME_LIMIT = 300
-let resetTimers = false
-let resetTimeSelectors = false
-let resetShort = false
-let resetLong = false
+let resetTimers = false // resetting when pomodoro timer is set in the settings page, when true
+//let resetTimeSelectors = false
+let resetShort = false // resetting when short timer is set in the settings page, when true
+let resetLong = false // // resetting when long timer is set in the settings page, when true
 
 const start__pause = document.querySelector(".start__pause")
-let paused = false
+let paused = false // Pausing the timer
 console.log(start__pause)
 
 const break__selectors = Array.from(document.querySelectorAll(".break__mode--btn"))
@@ -75,10 +75,10 @@ function timer(seconds) {
     }
     //reset timers when changing from one mode to another
     //eg when changing from pomodoro to short break or to long break
-    if (resetTimeSelectors) {
+   /* if (resetTimeSelectors) {
       clearInterval(progressChecker)
       resetTimeSelectors = false
-    }
+    }*/
 
     if (seconds === 0) {
       displayTime.innerHTML = "00:00"
@@ -103,30 +103,11 @@ timer(TIME_LIMIT)
 break__selectors.forEach(selector => {
   selector.onchange = () => {
     resetTimeSelectors = true
-    if (selector.id == "short") {
-     /* resetTimers = false
-      resetLong = false
-     resetShort = true */
-     /* TIME_LIMIT = short__count * 60
-      console.log(selector)
-      console.log(short__count)
-      timer(TIME_LIMIT)*/
+    if (selector.id == "short") {    
       shortBreakMode()
-    } else if (selector.id == "long") {
-     /* resetTimers = false
-     resetLong = true
-     resetShort = false */
-     /* TIME_LIMIT = long__count * 60
-      console.log(selector)
-      console.log(long__count)
-      timer(TIME_LIMIT)*/
+    } else if (selector.id == "long") {     
       longBreakMode()
-    } else {
-     /* resetTimers = true
-      resetLong = false
-      resetShort = false*/
-     /* TIME_LIMIT = pomodoro__count * 60
-      timer(TIME_LIMIT)*/
+    } else {     
       setPomodoro()
     }
   }
