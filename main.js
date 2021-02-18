@@ -45,7 +45,7 @@ circle.style.strokeDashoffset = `${circumference}`;
 function setProgress(percent) {
   const offset = circumference - percent / TIME_LIMIT * circumference;
   circle.style.strokeDashoffset = offset;
-  console.log(offset)
+//  console.log(offset)
 }
 
 function timer(seconds) {
@@ -104,33 +104,43 @@ break__selectors.forEach(selector => {
   selector.onchange = () => {
     resetTimeSelectors = true
     if (selector.id == "short") {
-      TIME_LIMIT = short__count * 60
+     /* resetTimers = false
+      resetLong = false
+     resetShort = true */
+     /* TIME_LIMIT = short__count * 60
       console.log(selector)
       console.log(short__count)
-      timer(TIME_LIMIT)
+      timer(TIME_LIMIT)*/
+      shortBreakMode()
     } else if (selector.id == "long") {
-      TIME_LIMIT = long__count * 60
+     /* resetTimers = false
+     resetLong = true
+     resetShort = false */
+     /* TIME_LIMIT = long__count * 60
       console.log(selector)
       console.log(long__count)
-      timer(TIME_LIMIT)
+      timer(TIME_LIMIT)*/
+      longBreakMode()
     } else {
-      TIME_LIMIT = pomodoro__count * 60
-      timer(TIME_LIMIT)
+     /* resetTimers = true
+      resetLong = false
+      resetShort = false*/
+     /* TIME_LIMIT = pomodoro__count * 60
+      timer(TIME_LIMIT)*/
+      setPomodoro()
     }
   }
 })
 
 /* modal setting */
 change__settings.addEventListener("click", () => {
-  modal.classList.toggle("modal__settings__hide")
-  // break__selectors.forEach(selector => {
-  // resetTimers = true
-  //  resetTimeSelectors = true
-  //})
+  modal.classList.toggle("modal__settings__hide")  
 })
 close__menu.addEventListener("click", () => {
   modal.classList.toggle("modal__settings__hide")
-  // resetTimers = false
+  resetTimers = false
+  resetLong = false
+  resetShort = false
   //resetTimeSelectors = true
 })
 
@@ -228,9 +238,9 @@ main__settings.addEventListener("submit", (evt) => {
   modal.classList.toggle("modal__settings__hide")
   changeColor()
   changeFont()
-  setPomodoro()
- shortBreakMode()
- // longBreakMode()
+ // setPomodoro()
+ // shortBreakMode()
+//  longBreakMode()
   alert("changes initiated")
   //  paused = false
   //  resetTimers = false
@@ -304,18 +314,18 @@ const setPomodoro = () => {
 
 const shortBreakMode = () => {
   resetShort = true
-  resetTimers = true
+  //resetTimers = true
   TIME_LIMIT = time__control__short.value * 60
   timer(TIME_LIMIT)
   //resetTimers = false
 }
 
 const longBreakMode = () => {
-   resetLong = true
-   resetTimers = true
+  resetLong = true
+ // resetTimers = true
   TIME_LIMIT = time__control__long.value * 60
   timer(TIME_LIMIT)
- // resetTimers = false
+  // resetTimers = false
 }
 
 start__pause.addEventListener("click", () => {
