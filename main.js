@@ -17,7 +17,7 @@ const break__selectors = Array.from(document.querySelectorAll(".break__mode--btn
 //console.log(break__selectors)
 const change__settings = document.querySelector(".menu__options--btn") //menu options selector
 const close__menu = document.querySelector(".close__menu") //close the settings menu
-const modal = document.querySelector(".modal__settings")
+const modal = document.querySelector(".modal__settings") // modal settings page
 const pomodoroBtn = document.querySelector(".pomodoro--btn") // to set focus on this button on load
 // timer controller setter
 const timer__controller = document.querySelector(".time__settings")
@@ -83,6 +83,7 @@ function timer(seconds) {
 
     if (seconds === 0) {
       displayTime.innerHTML = "00:00"
+      start__pause.innerHTML = "Start"
       clearInterval(progressChecker)
     }
 
@@ -151,11 +152,11 @@ timer__controller.addEventListener("click", (evt) => {
     console.log("short timer break controll")
     if (target.classList.contains("btn--up")) {
       console.log("increase the short break timer")
-      countUp(10, short__count, target__input, 5)
+      countUp(10, short__count, target__input, 1)
     }
     else if (target.classList.contains("btn--down")) {
       console.log("decrease the short break timer")
-      countDown(5, short__count, target__input, 10)
+      countDown(1, short__count, target__input, 10)
     }
   } else if (target__input.classList.contains("time__control__long")) {
     console.log("long timer break controll")
@@ -233,7 +234,7 @@ main__settings.addEventListener("submit", (evt) => {
 const changeColor = () => {
   //progress ring
   const progress__ring = document.querySelector(".progress-ring__circle")
-  const checkedBtns = Array.from(document.querySelectorAll("input[type='radio']:checked + label.break__mode__ctrls"))
+  const checkedBtns = document.querySelector("input[type='radio']:checked + label.break__mode__ctrls")
   // console.log(checkedBtn)
   const colors = Array.from(document.querySelectorAll(".color__list"))
   colors.forEach(colored => {
@@ -242,10 +243,10 @@ const changeColor = () => {
       console.log(colored.id)
       if (colored.id == "turquoise") {
         progress__ring.classList.add("lime__ring")
-        checkedBtns.forEach(btn => {
+        //checkedBtns.forEach(btn => {
           // btn.classList.add("lime__btn")
-          btn.style.backgroundColor = "#70F380"
-        })
+          checkedBtns.style.backgroundColor = "#70F380"
+        //})
         // checkedBtn.classList.add("lime__btn")
         //checkedBtn.style.backgroundColor = "#70F380"
       } else if (colored.id == "purple") {
@@ -318,6 +319,8 @@ start__pause.addEventListener("click", () => {
   if (paused) {
     start__pause.innerHTML = "Pause"
     if (TIME_LIMIT <= 0) {
+     // timer(TIME_LIMIT)
+      //start__pause.innerHTML = "Start"
       return
     } else {
       timer(TIME_LIMIT)

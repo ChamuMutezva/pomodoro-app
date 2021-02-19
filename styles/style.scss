@@ -368,7 +368,7 @@ input[type="radio"]:checked+label {
   }
 
   input[type="radio"]:checked+label.break__mode__ctrls {
-    line-height: 48px;
+    // line-height: 48px;
   }
 
   .progress-ring {
@@ -402,5 +402,38 @@ input[type="radio"]:checked+label {
   .font__selection,
   .color__selection {
     margin: 0;
+  }
+}
+
+@media screen and(min-width: 1120px) {
+  h1 {
+    margin-top: 48px;
+  }
+
+  .menu__options {
+    margin-top: -55px;
+  }
+
+  .modal__settings {
+    width: 37.5%;
+    top: 146px;
+    left: 30%;
+  }
+
+  .timers {
+    display: flex;
+  }
+
+  label {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .controls {
+    right: 40px;
+    top: 35px;
+  }
+  span {   
+    margin-left: -52px;
+    margin-bottom: 20px;
   }
 }
