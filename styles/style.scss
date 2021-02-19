@@ -167,6 +167,7 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: none;
 }
 
 .menu__options--btn {
@@ -293,6 +294,9 @@ label {
   position: absolute;
   z-index: 1;
   border-radius: 100%;
+}
+.fonts, .colors {
+	border: none;
 }
 
 .fonts__label,
