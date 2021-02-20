@@ -203,7 +203,7 @@ input[type="radio"]:focus {
 }
 
 .break__mode {
-  width: 87.2%;
+  width: 100%;
   max-width: 350px;
   margin: auto;
   display: -webkit-box;
@@ -450,7 +450,10 @@ input[type="radio"]:checked + label {
     font-size: 2rem;
   }
   .break__mode {
-    max-width: 373px;
+    max-width: 450px;
+  }
+  .break__mode__form {
+    width: 450px;
   }
   .pomodoro__container {
     gap: 55px;
