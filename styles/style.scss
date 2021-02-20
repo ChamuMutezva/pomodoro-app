@@ -193,6 +193,7 @@ input[type="radio"]:focus {
   align-items: center;
   border: none;
   position: relative;
+  flex-wrap: nowrap;
 }
 
 .menu__options--btn {

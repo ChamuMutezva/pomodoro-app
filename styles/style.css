@@ -217,6 +217,8 @@ input[type="radio"]:focus {
           align-items: center;
   border: none;
   position: relative;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .menu__options--btn {
