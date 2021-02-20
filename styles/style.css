@@ -345,6 +345,10 @@ label {
   border: none;
 }
 
+.fonts {
+  padding-bottom: 40px;
+}
+
 .fonts__label,
 .color__label {
   z-index: 5;
