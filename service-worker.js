@@ -22,7 +22,8 @@ self.addEventListener('fetch', (event) => {
                             './index.html',
                             './styles/style.css',
                             './main.js',
-                            './images/*'
+                            './images/*',
+                            './app.webmanifest'
                         ]);
                     })
                 );
