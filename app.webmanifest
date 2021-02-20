@@ -1,7 +1,7 @@
 {
     "name": "pomodoro",
     "short_name": "pomodoro",
-    "start_url": "index.html",
+    "start_url": "./index.html",
     "icons": [
         {
             "src": "./assets/android-chrome-192x192.png",
