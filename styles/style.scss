@@ -138,7 +138,8 @@ input[type="radio"]:checked+label.break__mode__ctrls {
 
 input[type="radio"]:focus {
   background: $btn-bg-color;
-  opacity: 0.9;
+  opacity: 0.8;
+  //line-height: 48px;
 }
 
 .lime__btn {
@@ -147,7 +148,7 @@ input[type="radio"]:focus {
 
 .break__mode__ctrls {
   position: absolute;
-  left: 0px;
+  left: 20%;
   top: 10px;
   color: $tx-off-white;
 }
@@ -209,7 +210,7 @@ input[type="radio"]:focus {
   align-items: center;
   padding-top: 24px;
   padding-bottom: 24px;
-  flex-wrap: wrap ;
+  flex-wrap: wrap;
 }
 
 input.timesetter,
@@ -394,8 +395,8 @@ input[type="radio"]:checked+label {
     padding: 24px;
   }
 
-  input[type="radio"]:checked+label.break__mode__ctrls {
-    // line-height: 48px;
+  input[type="radio"]:checked + label.break__mode__ctrls {   
+    line-height: 48px;
   }
 
   .progress-ring {
@@ -449,20 +450,31 @@ input[type="radio"]:checked+label {
 
   .timers {
     display: flex;
+    width: 90%;
+    margin: auto;
   }
 
   label {
     flex-direction: column;
     flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .timesetter__labels {
+    align-items: self-start;
   }
 
   .controls {
     right: 40px;
-    top: 15px;
+    top: 38px;
   }
 
   span {
     margin-left: -52px;
     margin-bottom: 20px;
+  }
+
+  input[type="number"] {
+    padding: 14px;
   }
 }

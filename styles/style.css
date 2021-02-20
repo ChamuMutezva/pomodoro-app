@@ -155,7 +155,7 @@ input[type="radio"]:checked + label.break__mode__ctrls {
 
 input[type="radio"]:focus {
   background: #F87070;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .lime__btn {
@@ -164,7 +164,7 @@ input[type="radio"]:focus {
 
 .break__mode__ctrls {
   position: absolute;
-  left: 0px;
+  left: 20%;
   top: 10px;
   color: #EFF1FA;
 }
@@ -437,6 +437,9 @@ input[type="radio"]:checked + label {
     width: 120px;
     padding: 24px;
   }
+  input[type="radio"]:checked + label.break__mode__ctrls {
+    line-height: 48px;
+  }
   .progress-ring {
     -webkit-transform: scale(1.35);
             transform: scale(1.35);
@@ -493,6 +496,8 @@ input[type="radio"]:checked + label {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: 90%;
+    margin: auto;
   }
   label {
     -webkit-box-orient: vertical;
@@ -501,14 +506,23 @@ input[type="radio"]:checked + label {
             flex-direction: column;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    gap: 20px;
+  }
+  .timesetter__labels {
+    -webkit-box-align: self-start;
+        -ms-flex-align: self-start;
+            align-items: self-start;
   }
   .controls {
     right: 40px;
-    top: 15px;
+    top: 38px;
   }
   span {
     margin-left: -52px;
     margin-bottom: 20px;
+  }
+  input[type="number"] {
+    padding: 14px;
   }
 }
 /*# sourceMappingURL=style.css.map */
