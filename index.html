@@ -25,13 +25,13 @@
           </div>
 
           <div class="pomodoro__ctrls">
-            <input type="radio" name="breaks" id="short"  tabindex="0" class="short--btn break__mode--btn">
+            <input type="radio" name="breaks" id="short" tabindex="0" class="short--btn break__mode--btn">
             <label for="short" class="break__mode__ctrls">short break
             </label>
           </div>
 
           <div class="pomodoro__ctrls">
-            <input type="radio" name="breaks" id="long"  tabindex="0" class="long--btn break__mode--btn">
+            <input type="radio" name="breaks" id="long" tabindex="0" class="long--btn break__mode--btn">
             <label for="long" class="break__mode__ctrls">long break
             </label>
           </div>
@@ -77,11 +77,11 @@
               <div class="controls">
                 <button type="button" class="controls__timer">
                   <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
-                     tabindex="0" />
+                    tabindex="0" />
                 </button>
                 <button type="button" class="controls__timer">
                   <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
-                     tabindex="0">
+                    tabindex="0">
                 </button>
               </div>
 
@@ -96,11 +96,11 @@
               <div class="controls">
                 <button type="button" class="controls__timer">
                   <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
-                     tabindex="0" />
+                    tabindex="0" />
                 </button>
                 <button type="button" class="controls__timer">
                   <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
-                     tabindex="0">
+                    tabindex="0">
                 </button>
               </div>
 
@@ -116,11 +116,11 @@
               <div class="controls">
                 <button type="button" class="controls__timer">
                   <img src="./assets/icon-arrow-up.svg" alt="increment up" class="controls__timer--btn btn--up"
-                     tabindex="0" />
+                    tabindex="0" />
                 </button>
                 <button type="button" class="controls__timer">
                   <img src="./assets/icon-arrow-down.svg" alt="increment down" class="controls__timer--btn btn--down"
-                     tabindex="0">
+                    tabindex="0">
                 </button>
               </div>
 
@@ -181,6 +181,18 @@
   </main>
 
   <script src="main.js"></script>
+  <!-- start of web manifest -->
+  <link rel="manifest" href="./app.webmanifest">
+  <!-- end of web manifest -->
+  <!-- register service worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(() => { console.log("Service Worker Registered"); });
+      });
+    }  
+  </script>
 </body>
 
 </html>
