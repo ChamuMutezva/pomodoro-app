@@ -17,7 +17,7 @@
       <h1>pomodoro</h1>
       <form>
         <fieldset class="break__mode">
-
+          <legend class="sr-only">make a timer selection</legend>
           <div class="pomodoro__ctrls">
             <input type="radio" name="breaks" id="pomodoro" class="pomodoro--btn break__mode--btn" checked>
             <label for="pomodoro" class="break__mode__ctrls">pomodoro
@@ -129,6 +129,9 @@
       <!--font selection -->
       <fieldset class="fonts">
         <h3>font</h3>
+        <legend class="sr-only">
+          select a font
+        </legend>
         <div class="font__selection">
 
           <div class="fonts__container">
@@ -151,9 +154,10 @@
       <hr class="break__line">
       <!--color selection-->
       <fieldset class="colors">
-        
-          <h3>color</h3>
-        
+        <h3>color</h3>
+        <legend class="sr-only">
+          select a color
+        </legend>
         <div class="color__selection">
           <div class="color__container">
             <input type="radio" name="color__selector" id="orange" class="orange color__list" checked>

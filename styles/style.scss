@@ -352,6 +352,11 @@ input[type="radio"]:checked+label {
   position: relative;
 }
 
+//screenreader only
+.sr-only {
+	visibility: hidden;
+}
+
 @media screen and(min-width: 768px) {
   h1 {
     margin-top: 80px;
