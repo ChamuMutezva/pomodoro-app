@@ -129,13 +129,15 @@ close__menu.addEventListener("click", () => {
 
 timer__controller.addEventListener("click", (evt) => {
   const target = evt.target
+  console.log(target)
   //get parent div of target
   const parent__div = target.closest("div")
   // get parent div of input element
   const parent__input = parent__div.previousElementSibling
   // get input element
   const target__input = parent__input.firstElementChild
-  if (target__input == null) {
+  console.log(target__input)
+  if (target__input == null || parent__input == null) {
     return
   }
   if (target__input.classList.contains("time__control")) {

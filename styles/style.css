@@ -153,6 +153,11 @@ input[type="radio"]:checked + label.break__mode__ctrls {
   line-height: 40px;
 }
 
+input[type="radio"]:focus {
+  background: #F87070;
+  opacity: 0.9;
+}
+
 .lime__btn {
   background-color: #70F380;
 }
@@ -191,6 +196,7 @@ input[type="radio"]:checked + label.break__mode__ctrls {
       -ms-flex-align: center;
           align-items: center;
   border: none;
+  position: relative;
 }
 
 .menu__options--btn {
@@ -232,6 +238,8 @@ input[type="radio"]:checked + label.break__mode__ctrls {
           align-items: center;
   padding-top: 24px;
   padding-bottom: 24px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 input.timesetter,
@@ -243,6 +251,7 @@ input.time__control {
 .fonts,
 .colors {
   padding: 24px 0 10px;
+  position: relative;
 }
 
 input[type="number"] {
@@ -341,7 +350,8 @@ label {
   border-radius: 100%;
 }
 
-.fonts, .colors {
+.fonts,
+.colors {
   border: none;
 }
 
@@ -407,7 +417,9 @@ input[type="radio"]:checked + label {
 }
 
 .sr-only {
-  visibility: hidden;
+  /* visibility: hidden; */
+  position: absolute;
+  left: -5200px;
 }
 
 @media screen and (min-width: 768px) {
@@ -492,7 +504,7 @@ input[type="radio"]:checked + label {
   }
   .controls {
     right: 40px;
-    top: 35px;
+    top: 15px;
   }
   span {
     margin-left: -52px;

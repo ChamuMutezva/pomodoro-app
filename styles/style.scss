@@ -136,6 +136,11 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   line-height: 40px;
 }
 
+input[type="radio"]:focus {
+  background: $btn-bg-color;
+  opacity: 0.9;
+}
+
 .lime__btn {
   background-color: $tx-lime;
 }
@@ -168,6 +173,7 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   justify-content: space-between;
   align-items: center;
   border: none;
+  position: relative;
 }
 
 .menu__options--btn {
@@ -203,6 +209,7 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   align-items: center;
   padding-top: 24px;
   padding-bottom: 24px;
+  flex-wrap: wrap ;
 }
 
 input.timesetter,
@@ -214,6 +221,7 @@ input.time__control {
 .fonts,
 .colors {
   padding: 24px 0 10px;
+  position: relative;
 }
 
 input[type="number"] {
@@ -295,11 +303,14 @@ label {
   z-index: 1;
   border-radius: 100%;
 }
-.fonts, .colors {
-	border: none;
+
+.fonts,
+.colors {
+  border: none;
 }
+
 .fonts {
-	padding-bottom: 40px;
+  padding-bottom: 40px;
 }
 
 .fonts__label,
@@ -356,9 +367,13 @@ input[type="radio"]:checked+label {
 }
 
 //screenreader only
+
 .sr-only {
-	visibility: hidden;
+  /* visibility: hidden; */
+  position: absolute;
+  left: -5200px;
 }
+
 
 @media screen and(min-width: 768px) {
   h1 {
@@ -440,11 +455,13 @@ input[type="radio"]:checked+label {
     flex-direction: column;
     flex-wrap: wrap;
   }
+
   .controls {
     right: 40px;
-    top: 35px;
+    top: 15px;
   }
-  span {   
+
+  span {
     margin-left: -52px;
     margin-bottom: 20px;
   }
