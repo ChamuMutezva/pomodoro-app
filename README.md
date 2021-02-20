@@ -24,5 +24,5 @@ In the settings page , the following can be changed:
 - There are 3 types of fonts to choose from
 - and 3 colors to choose from for the ring circumference
  
- ![Image of pomodoro]("./assets/pomodoro1.png")
+ ![Image of pomodoro](./assets/pomodoro1.png)
 
