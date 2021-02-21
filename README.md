@@ -24,10 +24,9 @@ In the settings page , the following can be changed:
 - There are 3 types of fonts to choose from
 - and 3 colors to choose from for the ring circumference
  
- ![Image of pomodoro with timer in motion](./assets/pomodoro1.png)
+![Image of pomodoro with timer in motion](./assets/pomodoro1.png)
 ![Image of pomodoro with timer in motion](./assets/pomodoro4.png)
 ![Image of pomodoro with timer in motion](./assets/pomodoro3.png)
-
 ![Image of pomodoro with timer in motion](./assets/pomodoro2.png)
 
 

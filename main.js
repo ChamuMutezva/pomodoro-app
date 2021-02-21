@@ -42,38 +42,38 @@ console.log(circumference)
                LAZY LOADING
     --------------------------------------------*/
 
-    let imagesToLoad = document.querySelectorAll('img[data-src]');
+let imagesToLoad = document.querySelectorAll('img[data-src]');
 
-    let loadImages = (image) => {
-        image.setAttribute('src', image.getAttribute('data-src'));
-        image.onload = () => {
-            image.removeAttribute('data-src');
-        };
-    };
-  
-    if ('IntersectionObserver' in window) {
-        let observer = new IntersectionObserver((items, observer) => {
-            items.forEach((item) => {
-                if (item.isIntersecting) {
-                    loadImages(item.target);
-                    observer.unobserve(item.target);
-                }
-            });
-        });
-        imagesToLoad.forEach((img) => {
-            observer.observe(img);
-        });
-    } 
-     else {
-        imagesToLoad.forEach((img) => {
-            loadImages(img);
-        });
-    }
+let loadImages = (image) => {
+  image.setAttribute('src', image.getAttribute('data-src'));
+  image.onload = () => {
+    image.removeAttribute('data-src');
+  };
+};
+
+if ('IntersectionObserver' in window) {
+  let observer = new IntersectionObserver((items, observer) => {
+    items.forEach((item) => {
+      if (item.isIntersecting) {
+        loadImages(item.target);
+        observer.unobserve(item.target);
+      }
+    });
+  });
+  imagesToLoad.forEach((img) => {
+    observer.observe(img);
+  });
+}
+else {
+  imagesToLoad.forEach((img) => {
+    loadImages(img);
+  });
+}
 
 
- /*-------------------------------------------------
-              END OF  LAZY LOADING
-    --------------------------------------------*/   
+/*-------------------------------------------------
+             END OF  LAZY LOADING
+   --------------------------------------------*/
 
 //input__control__time.addEventListener
 
@@ -83,7 +83,7 @@ circle.style.strokeDashoffset = `${circumference}`;
 function setProgress(percent) {
   const offset = circumference - percent / TIME_LIMIT * circumference;
   circle.style.strokeDashoffset = offset;
-//  console.log(offset)
+  //  console.log(offset)
 }
 
 function timer(seconds) {
@@ -111,7 +111,7 @@ function timer(seconds) {
       clearInterval(progressChecker)
       resetLong = false
     }
-   
+
 
     if (seconds === 0) {
       displayTime.innerHTML = "00:00"
@@ -137,11 +137,11 @@ timer(TIME_LIMIT)
 break__selectors.forEach(selector => {
   selector.onchange = () => {
     resetTimeSelectors = true
-    if (selector.id == "short") {    
+    if (selector.id == "short") {
       shortBreakMode()
-    } else if (selector.id == "long") {     
+    } else if (selector.id == "long") {
       longBreakMode()
-    } else {     
+    } else {
       setPomodoro()
     }
   }
@@ -149,7 +149,7 @@ break__selectors.forEach(selector => {
 
 /* modal setting */
 change__settings.addEventListener("click", () => {
-  modal.classList.toggle("modal__settings__hide")  
+  modal.classList.toggle("modal__settings__hide")
 })
 close__menu.addEventListener("click", () => {
   modal.classList.toggle("modal__settings__hide")
@@ -255,9 +255,9 @@ main__settings.addEventListener("submit", (evt) => {
   modal.classList.toggle("modal__settings__hide")
   changeColor()
   changeFont()
- // setPomodoro()
- // shortBreakMode()
-//  longBreakMode()
+  // setPomodoro()
+  // shortBreakMode()
+  //  longBreakMode()
   alert("changes initiated")
 
 })
@@ -276,8 +276,8 @@ const changeColor = () => {
       if (colored.id == "turquoise") {
         progress__ring.classList.add("lime__ring")
         //checkedBtns.forEach(btn => {
-          // btn.classList.add("lime__btn")
-          checkedBtns.style.backgroundColor = "#70F380"
+        // btn.classList.add("lime__btn")
+        checkedBtns.style.backgroundColor = "#70F380"
         //})
         // checkedBtn.classList.add("lime__btn")
         //checkedBtn.style.backgroundColor = "#70F380"
@@ -337,7 +337,7 @@ const shortBreakMode = () => {
 
 const longBreakMode = () => {
   resetLong = true
- // resetTimers = true
+  // resetTimers = true
   TIME_LIMIT = time__control__long.value * 60
   timer(TIME_LIMIT)
   // resetTimers = false
@@ -351,7 +351,7 @@ start__pause.addEventListener("click", () => {
   if (paused) {
     start__pause.innerHTML = "Pause"
     if (TIME_LIMIT <= 0) {
-     // timer(TIME_LIMIT)
+      // timer(TIME_LIMIT)
       //start__pause.innerHTML = "Start"
       return
     } else {
@@ -369,7 +369,6 @@ start__pause.addEventListener("click", () => {
     }
 
   }
-  //paused ? start__pause.innerHTML = "Start" : start__pause.innerHTML = "Pause"
 
 })
 
