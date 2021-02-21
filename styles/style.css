@@ -136,6 +136,11 @@ img {
   font-weight: 600;
 }
 
+.start__pause:hover {
+  -webkit-animation: heartBeat 1s;
+          animation: heartBeat 1s;
+}
+
 time {
   font-size: 4rem;
   color: #FFFFFF;

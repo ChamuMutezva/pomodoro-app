@@ -117,7 +117,9 @@ img {
   letter-spacing: 13.13px;
   font-weight: 600;
 }
-
+.start__pause:hover {
+	animation: heartBeat 1s;
+}
 time {
   font-size: 4rem;
   color: $tx-white;
