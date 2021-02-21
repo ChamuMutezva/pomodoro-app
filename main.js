@@ -111,12 +111,7 @@ function timer(seconds) {
       clearInterval(progressChecker)
       resetLong = false
     }
-    //reset timers when changing from one mode to another
-    //eg when changing from pomodoro to short break or to long break
-   /* if (resetTimeSelectors) {
-      clearInterval(progressChecker)
-      resetTimeSelectors = false
-    }*/
+   
 
     if (seconds === 0) {
       displayTime.innerHTML = "00:00"
@@ -264,8 +259,6 @@ main__settings.addEventListener("submit", (evt) => {
  // shortBreakMode()
 //  longBreakMode()
   alert("changes initiated")
-  //  paused = false
-  //  resetTimers = false
 
 })
 

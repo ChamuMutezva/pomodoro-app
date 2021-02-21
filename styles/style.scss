@@ -148,26 +148,30 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   opacity: 1;
   left: 0px;
   place-content: center;
-  top: 0px;
+  top: 3px;
   text-align: center;
   // display: block;
   line-height: 40px;
 }
 
-input[type="radio"]:focus {
-  background: $btn-bg-color;
-  opacity: 0.8;
-  //line-height: 48px;
+input[type="radio"]:focus { 
+  opacity: 0.8; 
 }
 
 .lime__btn {
   background-color: $tx-lime;
 }
+.break__mode__form {
+	background-color: $bg-color-main;
+	width: 87.2%;
+	max-width: 400px;
+	border-radius: 20px;
+}
 
 .break__mode__ctrls {
   position: absolute;
-  left: 20%;
-  top: 10px;
+  left: 10px;
+  top: 16px;
   color: $tx-off-white;
 }
 
@@ -185,8 +189,7 @@ input[type="radio"]:focus {
 }
 
 .break__mode {
-  width: 100%;
-  max-width: 350px;
+  width: 100%; 
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -386,14 +389,50 @@ input[type="radio"]:checked+label {
   position: relative;
 }
 
+//hover and active states
+.break__mode__ctrls:hover, button:hover, input[type="radio"]:hover, .fonts__label:hover, .color__label:hover {
+	cursor: pointer;
+}
+
 //screenreader only
 
-.sr-only {
-  /* visibility: hidden; */
+.sr-only { 
   position: absolute;
   left: -5200px;
 }
 
+/* ----------------------------------------
+              EFFECTS / ANIMATION
+----------------------------------------- */
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+
+  14% {
+    transform: scale(1.3);
+  }
+
+  28% {
+    transform: scale(1);
+  }
+
+  42% {
+    transform: scale(1.3);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+}
+.menu__options--btn:hover { 
+  animation: heartBeat 1.3s ease-in-out; 
+}
+
+/* --------------------------------------------
+            END OF EFFECTS / ANIMATION
+----------------------------------------------- */
 
 @media screen and(min-width: 768px) {
   h1 {
