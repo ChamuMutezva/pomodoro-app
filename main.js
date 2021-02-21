@@ -116,6 +116,7 @@ function timer(seconds) {
     if (seconds === 0) {
       displayTime.innerHTML = "00:00"
       start__pause.innerHTML = "Start"
+      alarmSetter()
       clearInterval(progressChecker)
     }
 
@@ -134,7 +135,9 @@ timer(TIME_LIMIT)
 /* make a selection among pomodoro, short and long breaks 
       ________-----------------------------____________
 */
-break__selectors.forEach(selector => {
+//break__selectors[0].checked == true
+const timeselectors = () => break__selectors.forEach(selector => {
+ 
   selector.onchange = () => {
     resetTimeSelectors = true
     if (selector.id == "short") {
@@ -146,7 +149,7 @@ break__selectors.forEach(selector => {
     }
   }
 })
-
+timeselectors()
 /* modal setting */
 change__settings.addEventListener("click", () => {
   modal.classList.toggle("modal__settings__hide")
@@ -351,7 +354,20 @@ start__pause.addEventListener("click", () => {
   if (paused) {
     start__pause.innerHTML = "Pause"
     if (TIME_LIMIT <= 0) {
+      // timeselectors()
       // timer(TIME_LIMIT)
+     // start__pause.innerHTML = "Start"
+     /* break__selectors.forEach(selected => {
+        if (selected.checked) {
+          if (selected.id == "short") {
+            shortBreakMode()
+          } else if (selected.id == "long") {
+            longBreakMode()
+          } else {
+            setPomodoro()
+          }
+        }
+      }) */
       //start__pause.innerHTML = "Start"
       return
     } else {
@@ -384,3 +400,11 @@ const time__left = () => {
   // setProgress(TIME_LIMIT)
   console.log(TIME_LIMIT)
 }
+
+const playSound = () => {
+  const audio = new Audio(alarm)
+  audio.play()
+}
+
+let alarmSetter = () => setTimeout(playSound, 1000);
+//alarmSetter()
