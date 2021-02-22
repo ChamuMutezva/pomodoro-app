@@ -243,12 +243,11 @@ input[type="radio"]:focus {
 
 .settings__nav {
   display: flex;
-  width: 85%;
+  //width: 85%;
   margin: auto;
   justify-content: space-between;
   align-items: center;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding: 24px; 
   flex-wrap: wrap;
 }
 
@@ -465,6 +464,9 @@ input[type="radio"]:hover,
   .break__mode {
     // max-width: 450px;
     gap: 25px;
+  }
+  .settings__nav {    
+    padding: 24px 52px;    
   }
 
   .pomodoro__container {

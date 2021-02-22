@@ -269,7 +269,6 @@ input[type="radio"]:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 85%;
   margin: auto;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -277,8 +276,7 @@ input[type="radio"]:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding: 24px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -533,6 +531,9 @@ input[type="radio"]:hover,
   }
   .break__mode {
     gap: 25px;
+  }
+  .settings__nav {
+    padding: 24px 52px;
   }
   .pomodoro__container {
     gap: 55px;
