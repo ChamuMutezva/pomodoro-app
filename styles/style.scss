@@ -156,6 +156,7 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   place-content: center;
   top: 3px;
   text-align: center;
+  border: 1px solid white;
   // display: block;
   // line-height: 40px;
 }
@@ -300,7 +301,7 @@ label {
   justify-content: space-between;
   margin: auto;
   align-items: center;
-  font-size: 0.875rem;
+  font-size: 0.875rem; 
 }
 
 .time__control,
