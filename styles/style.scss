@@ -117,9 +117,11 @@ img {
   letter-spacing: 13.13px;
   font-weight: 600;
 }
+
 .start__pause:hover {
-	animation: heartBeat 1s;
+  animation: heartBeat 1s;
 }
+
 time {
   font-size: 4rem;
   color: $tx-white;
@@ -130,15 +132,17 @@ time {
         pomodoro, short and long break selector
         --------------------------------------*/
 .break__mode--btn {
-  width: 106px;
-  padding: 16px;
+  // width: 106px;
+  // padding: 16px;
   outline: none;
   border: none;
   border-radius: 30px;
   color: $tx-off-white;
-  height: 40px;
+  height: 0;
+  opacity: 0;
+  width: 0;
   appearance: none;
-  border-radius: 30px;
+
 }
 
 /*when input radio is checked, label must
@@ -153,28 +157,39 @@ input[type="radio"]:checked+label.break__mode__ctrls {
   top: 3px;
   text-align: center;
   // display: block;
-  line-height: 40px;
+  // line-height: 40px;
 }
 
-input[type="radio"]:focus { 
-  opacity: 0.8; 
+input[type="radio"]:focus {
+  opacity: 0.8;
 }
 
 .lime__btn {
   background-color: $tx-lime;
 }
+
 .break__mode__form {
-	background-color: $bg-color-main;
-	width: 87.2%;
-	max-width: 400px;
-	border-radius: 20px;
+  background-color: $bg-color-main;
+  padding: 2px 10px;
+  //max-width: 400px;
+  border-radius: 20px;
 }
 
 .break__mode__ctrls {
-  position: absolute;
-  left: 10px;
-  top: 16px;
+  // position: absolute;
+  //  left: 10px;
+  //  top: 16px;
   color: $tx-off-white;
+  width: 100%;
+  padding: 1em 1.25em;
+  margin: 5px auto;
+}
+
+.pomodoro__ctrls {
+  position: relative;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 .break__mode--btn:hover {
@@ -191,7 +206,7 @@ input[type="radio"]:focus {
 }
 
 .break__mode {
-  width: 100%; 
+  width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -392,13 +407,17 @@ input[type="radio"]:checked+label {
 }
 
 //hover and active states
-.break__mode__ctrls:hover, button:hover, input[type="radio"]:hover, .fonts__label:hover, .color__label:hover {
-	cursor: pointer;
+.break__mode__ctrls:hover,
+button:hover,
+input[type="radio"]:hover,
+.fonts__label:hover,
+.color__label:hover {
+  cursor: pointer;
 }
 
 //screenreader only
 
-.sr-only { 
+.sr-only {
   position: absolute;
   left: -5200px;
 }
@@ -428,8 +447,9 @@ input[type="radio"]:checked+label {
     transform: scale(1);
   }
 }
-.menu__options--btn:hover { 
-  animation: heartBeat 1.3s ease-in-out; 
+
+.menu__options--btn:hover {
+  animation: heartBeat 1.3s ease-in-out;
 }
 
 /* --------------------------------------------
@@ -443,23 +463,12 @@ input[type="radio"]:checked+label {
   }
 
   .break__mode {
-    max-width: 450px;
-  }
-  .break__mode__form {
-    width: 450px;
+    // max-width: 450px;
+    gap: 25px;
   }
 
   .pomodoro__container {
     gap: 55px;
-  }
-
-  .break__mode--btn {
-    width: 120px;
-    padding: 24px;
-  }
-
-  input[type="radio"]:checked+label.break__mode__ctrls {
-    line-height: 48px;
   }
 
   .progress-ring {

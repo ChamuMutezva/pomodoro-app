@@ -151,17 +151,16 @@ time {
         pomodoro, short and long break selector
         --------------------------------------*/
 .break__mode--btn {
-  width: 106px;
-  padding: 16px;
   outline: none;
   border: none;
   border-radius: 30px;
   color: #EFF1FA;
-  height: 40px;
+  height: 0;
+  opacity: 0;
+  width: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  border-radius: 30px;
 }
 
 /*when input radio is checked, label must
@@ -175,7 +174,6 @@ input[type="radio"]:checked + label.break__mode__ctrls {
   place-content: center;
   top: 3px;
   text-align: center;
-  line-height: 40px;
 }
 
 input[type="radio"]:focus {
@@ -188,16 +186,27 @@ input[type="radio"]:focus {
 
 .break__mode__form {
   background-color: #161932;
-  width: 87.2%;
-  max-width: 400px;
+  padding: 2px 10px;
   border-radius: 20px;
 }
 
 .break__mode__ctrls {
-  position: absolute;
-  left: 10px;
-  top: 16px;
   color: #EFF1FA;
+  width: 100%;
+  padding: 1em 1.25em;
+  margin: 5px auto;
+}
+
+.pomodoro__ctrls {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .break__mode--btn:hover {
@@ -448,7 +457,11 @@ input[type="radio"]:checked + label {
   position: relative;
 }
 
-.break__mode__ctrls:hover, button:hover, input[type="radio"]:hover, .fonts__label:hover, .color__label:hover {
+.break__mode__ctrls:hover,
+button:hover,
+input[type="radio"]:hover,
+.fonts__label:hover,
+.color__label:hover {
   cursor: pointer;
 }
 
@@ -519,20 +532,10 @@ input[type="radio"]:checked + label {
     font-size: 2rem;
   }
   .break__mode {
-    max-width: 450px;
-  }
-  .break__mode__form {
-    width: 450px;
+    gap: 25px;
   }
   .pomodoro__container {
     gap: 55px;
-  }
-  .break__mode--btn {
-    width: 120px;
-    padding: 24px;
-  }
-  input[type="radio"]:checked + label.break__mode__ctrls {
-    line-height: 48px;
   }
   .progress-ring {
     -webkit-transform: scale(1.35);
