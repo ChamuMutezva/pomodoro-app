@@ -174,11 +174,14 @@ input[type="radio"]:checked + label.break__mode__ctrls {
   place-content: center;
   top: 3px;
   text-align: center;
-  border: 1px solid white;
 }
 
 input[type="radio"]:focus {
   opacity: 0.8;
+}
+
+input[type="radio"]:focus ~ label {
+  outline: 3px solid paleturquoise;
 }
 
 .lime__btn {

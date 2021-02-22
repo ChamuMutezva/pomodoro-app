@@ -137,7 +137,7 @@ timer(TIME_LIMIT)
 */
 //break__selectors[0].checked == true
 const timeselectors = () => break__selectors.forEach(selector => {
- 
+
   selector.onchange = () => {
     resetTimeSelectors = true
     if (selector.id == "short") {
@@ -351,39 +351,41 @@ start__pause.addEventListener("click", () => {
   console.log("start and pause button")
   paused = !paused
   console.log(paused)
+
   if (paused) {
     start__pause.innerHTML = "Pause"
-    if (TIME_LIMIT <= 0) {
-      // timeselectors()
-      // timer(TIME_LIMIT)
-     // start__pause.innerHTML = "Start"
-     /* break__selectors.forEach(selected => {
-        if (selected.checked) {
-          if (selected.id == "short") {
-            shortBreakMode()
-          } else if (selected.id == "long") {
-            longBreakMode()
-          } else {
-            setPomodoro()
-          }
-        }
-      }) */
-      //start__pause.innerHTML = "Start"
-      return
-    } else {
-      timer(TIME_LIMIT)
-    }
-
   } else {
     start__pause.innerHTML = "Start"
     if (TIME_LIMIT <= 0) {
       return
     } else {
       time__left()
-      // clearInterval(setProgress)
       timer(TIME_LIMIT)
     }
 
+  }
+
+  if (TIME_LIMIT <= 0) {
+    start__pause.innerHTML = "Start"
+    break__selectors.forEach(selected => {
+      if (selected.checked) {
+
+        if (selected.id == "short") {
+          // resetShort = false
+          shortBreakMode()
+        } else if (selected.id == "long") {
+          longBreakMode()
+        } else {
+          setPomodoro()
+        }
+      }
+      // paused = !paused
+      // start__pause.innerHTML = "Pause"
+    })
+    //start__pause.innerHTML = "Start"
+    return
+  } else {
+    timer(TIME_LIMIT)
   }
 
 })
