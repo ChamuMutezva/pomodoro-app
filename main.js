@@ -135,7 +135,10 @@ timer(TIME_LIMIT)
 /* make a selection among pomodoro, short and long breaks 
       ________-----------------------------____________
 */
-//break__selectors[0].checked == true
+window.onload = () => {
+  break__selectors[0].checked == true
+}
+
 const timeselectors = () => break__selectors.forEach(selector => {
 
   selector.onchange = () => {
