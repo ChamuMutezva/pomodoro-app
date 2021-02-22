@@ -140,13 +140,16 @@ const timeselectors = () => break__selectors.forEach(selector => {
 
   selector.onchange = () => {
     resetTimeSelectors = true
-    if (selector.id == "short") {
-      shortBreakMode()
-    } else if (selector.id == "long") {
-      longBreakMode()
-    } else {
-      setPomodoro()
+    if (selector.checked) {
+      if (selector.id == "short") {
+        shortBreakMode()
+      } else if (selector.id == "long") {
+        longBreakMode()
+      } else {
+        setPomodoro()
+      }
     }
+
   }
 })
 timeselectors()
